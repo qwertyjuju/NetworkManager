@@ -4,7 +4,11 @@ import logging.handlers
 import pathlib
 import serial
 
-
+commands=["ena",
+          "conf t",
+          "hostname ju",
+          "enable secret azerty123"
+          ]
 
 def init_logger():
     """
@@ -26,32 +30,49 @@ def init_logger():
     logger.addHandler(fh)
     return logger
 
+def log(logtype, *texts):
+    text = " ".join(texts)
+    if logtype.lower() == "info":
+        LOGGER.info(text)
+    elif logtype.lower() == "warning":
+        LOGGER.warning(text)
+    elif logtype.lower() == "error":
+        LOGGER.error(text)
+    else:
+        LOGGER.warning("message type incorrect. Message: " + text)
 
-class writer:
+
+class Writer:
     def __init__(self,port_com):
-        self._ser = serial.Serial()
+        self._ser = serial.Serial(timeout=1)
         self._ser.baudrate = 9600
         self._ser.port = port_com
         self.initialised = 0
         self._ser.open()
+        log("info","serial opened")
         self.initialised = 0
         while not self.initialised:
-            self._ser.write(b"\n")
-            line = str(self._ser.readline()).lower()
-            if line is "would you like to enter the initial configuration dialog? [yes/no]: \\r\\n":
+            self._ser.write(b'\n')
+            line = self._ser.readline().decode("utf-8").lower()
+            log("info", "", line)
+            self._ser.write(b'\n')
+            if line == "would you like to enter the initial configuration dialog? [yes/no]:":
                 self._ser.write(b"no\n")
             elif line[:-1] in [">", "#"]:
                 self.initialised = 1
-            time.sleep(5)
-        self._ser.close()
+            time.sleep(1)
 
-    def write_command(self, command):
-        self._ser.open()
-        self._ser.write(command)
-        self._ser.close()
-
-    def write_commands(self, commands):
-        self._ser.open()
+    def write_commands(self, command):
+        self._ser.write(b'\n')
         for command in commands:
-            self._ser.write(command)
+            self._ser.write(str.encode(command))
+
+    def get_mode(self):
+        pass
+
+    def close(self):
         self._ser.close()
+
+LOGGER=init_logger()
+wr = Writer("COM3")
+wr.write_commands(commands)
