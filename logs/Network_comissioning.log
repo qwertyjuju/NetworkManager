@@ -1855,3 +1855,130 @@
 
 2022-03-17 17:31:30,202 | Network_comissioning | INFO | console input:  switch>
 
+2022-03-17 17:34:35,644 | Network_comissioning | INFO | serial opened
+2022-03-17 17:34:35,657 | Network_comissioning | INFO | console input:  
+
+2022-03-17 17:34:36,668 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:37,688 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:38,700 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:39,713 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:40,729 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:41,743 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:42,756 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:43,769 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:44,782 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:45,793 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:46,808 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:47,820 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:48,834 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:49,849 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:50,862 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:34:51,873 | Network_comissioning | INFO | console input:  switch>
+
+2022-03-17 17:36:20,775 | Network_comissioning | INFO | serial opened
+2022-03-17 17:36:20,788 | Network_comissioning | INFO | console input:  
+2022-03-17 17:36:21,799 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:22,812 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:23,824 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:24,838 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:25,852 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:26,864 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:27,878 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:28,892 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:29,904 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:30,919 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:31,930 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:32,944 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:33,956 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:34,971 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:35,985 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:36,997 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:45,070 | Network_comissioning | INFO | serial opened
+2022-03-17 17:36:45,082 | Network_comissioning | INFO | console input:  
+2022-03-17 17:36:46,094 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:47,108 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:48,122 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:49,133 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:50,145 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:51,157 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:52,172 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:53,185 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:54,198 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:55,213 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:36:56,227 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:08,085 | Network_comissioning | INFO | serial opened
+2022-03-17 17:37:08,097 | Network_comissioning | INFO | console input:  
+2022-03-17 17:37:09,108 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:10,120 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:11,132 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:12,145 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:13,156 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:14,172 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:15,185 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:16,199 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:17,213 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:18,224 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:37:19,236 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:07,838 | Network_comissioning | INFO | serial opened
+2022-03-17 17:38:07,838 | Network_comissioning | INFO | serial opened
+2022-03-17 17:38:07,838 | Network_comissioning | INFO | serial opened
+2022-03-17 17:38:07,853 | Network_comissioning | INFO | console input:  
+2022-03-17 17:38:07,853 | Network_comissioning | INFO | console input:  
+2022-03-17 17:38:07,853 | Network_comissioning | INFO | console input:  
+2022-03-17 17:38:08,866 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:08,866 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:08,866 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:09,878 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:09,878 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:09,878 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:10,896 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:10,896 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:10,896 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:11,916 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:11,916 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:11,916 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:12,933 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:12,933 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:12,933 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:13,947 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:13,947 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:13,947 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:14,962 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:14,962 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:14,962 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:15,978 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:15,978 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:15,978 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:16,992 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:16,992 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:16,992 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:38:26,350 | Network_comissioning | INFO | serial opened
+2022-03-17 17:38:26,362 | Network_comissioning | INFO | console input:  
+2022-03-17 17:38:27,374 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:39:41,522 | Network_comissioning | INFO | serial opened
+2022-03-17 17:39:41,536 | Network_comissioning | INFO | console input:  
+2022-03-17 17:39:42,546 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:40:08,515 | Network_comissioning | INFO | serial opened
+2022-03-17 17:40:08,527 | Network_comissioning | INFO | console input:  
+2022-03-17 17:40:09,538 | Network_comissioning | INFO | console input:  switch>
+2022-03-17 17:41:08,027 | Network_comissioning | INFO | serial opened
+2022-03-17 17:41:08,027 | Network_comissioning | INFO | serial opened
+2022-03-17 17:41:08,040 | Network_comissioning | INFO | console input:  
+2022-03-17 17:41:08,040 | Network_comissioning | INFO | console input:  
+2022-03-17 17:41:09,051 | Network_comissioning | INFO | console input:  ju(config)#
+2022-03-17 17:41:09,051 | Network_comissioning | INFO | console input:  ju(config)#
