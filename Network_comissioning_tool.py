@@ -54,18 +54,24 @@ class Writer:
         while not self.initialised:
             self._ser.write(b'\n')
             line = self._ser.readline().decode("utf-8").lower()
-            log("info", "", line)
-            self._ser.write(b'\n')
-            if line == "would you like to enter the initial configuration dialog? [yes/no]:":
-                self._ser.write(b"no\n")
-            elif line[:-1] in [">", "#"]:
+            log("info", "console input: ", line)
+            if "initial configuration dialog" in line:
+                self.write_command("no")
+            elif line[:-2] in [">", "#"]:
                 self.initialised = 1
+            print(3, line)
             time.sleep(1)
 
+    def write_command(self, command=None):
+        if command:
+            self._ser.write(str.encode(command+"\n"))
+        else:
+           self._ser.write(str.encode("\n"))
+        
     def write_commands(self, command):
         self._ser.write(b'\n')
         for command in commands:
-            self._ser.write(str.encode(command))
+            self.write_command()
 
     def get_mode(self):
         pass
@@ -74,5 +80,4 @@ class Writer:
         self._ser.close()
 
 LOGGER=init_logger()
-wr = Writer("COM3")
-wr.write_commands(commands)
+wr = Writer("COM1")
