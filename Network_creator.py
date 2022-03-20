@@ -4,6 +4,7 @@ from pathlib import Path
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 from PyQt5 import uic
 
+
 class CreationTool:
     def __init__(self, uifile):
         self.app = QApplication(sys.argv)
