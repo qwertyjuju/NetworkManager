@@ -1982,3 +1982,4 @@
 2022-03-17 17:41:08,040 | Network_comissioning | INFO | console input:  
 2022-03-17 17:41:09,051 | Network_comissioning | INFO | console input:  ju(config)#
 2022-03-17 17:41:09,051 | Network_comissioning | INFO | console input:  ju(config)#
+2022-03-20 21:32:38,562 | Network_comissioning | INFO | network created, ip address: 192.168.10.0/24
