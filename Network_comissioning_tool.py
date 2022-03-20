@@ -77,7 +77,18 @@ class Writer:
         pass
 
     def close(self):
+        """
+        Permet de fermer la connexion entre l'hôte et la machine
+        :return:
+        """
         self._ser.close()
+
+    def line(self):
+        """
+        Permet d'afficher la dernière ligne. Fonction d'affichage
+        :return: La dernière ligne
+        """
+        return self._ser.readline()
 
 LOGGER=init_logger()
 wr = Writer("COM1")
