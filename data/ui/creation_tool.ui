@@ -68,6 +68,13 @@
           </property>
          </widget>
         </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Network ip:</string>
+          </property>
+         </widget>
+        </item>
         <item row="6" column="1">
          <widget class="QPushButton" name="B_CreateNetwork">
           <property name="text">
@@ -76,14 +83,7 @@
          </widget>
         </item>
         <item row="5" column="1">
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Network name:</string>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="LE_Ipaddr"/>
         </item>
        </layout>
       </widget>
