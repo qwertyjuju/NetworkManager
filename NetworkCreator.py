@@ -183,15 +183,37 @@ class Vlan:
 
 class NetworkDevice:
     _counter = 0
+    device_data = {}
+
+    @classmethod
+    def __init_class__(cls):
+        with open(Path("data/device_data.json"), "r") as f:
+            cls._device_data = json.load(f)
 
     def __init__(self):
         self._ID = self._counter
         NetworkDevice._counter += 1
 
+NetworkDevice.__init_class__()
+
 
 class Switch(NetworkDevice):
-    def __init__(self):
+    _counter = 0
+
+    def __new__(cls, *args, **kwargs):
+        if args[0] not in cls.device_data["switches"].keys():
+            log("error", "Switch creation failed: type not recognised")
+            return None
+        else:
+            return super().__new__(cls)
+
+    def __init__(self, ref, name="Switch",):
         super().__init__()
+        self.config = NetworkDevice.device_data["switches"][ref]
+        self.name = name if name is not "Switch" else name+str(Switch._counter)
+        Switch._counter += 1
+
+    def add_device(self):
         pass
 
 
