@@ -4,33 +4,31 @@ import logging
 import logging.handlers
 import ipaddress
 from pathlib import Path
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
-from PyQt5 import uic
+# from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+# from PyQt5 import uic
 
 
 """
 Logger
 """
+"""
+creates logger object. The logger has 2 handlers: One handler
+for showing logs in terminal and one handler for saving logs
+in file.
+"""
 
-def init_logger():
-    """
-    creates logger object. The logger has 2 handlers: One handler
-    for showing logs in terminal and one handler for saving logs
-    in file.
-    """
-    global LOGGER
-    LOGGER = logging.getLogger('Network_creation_tool')
-    LOGGER.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.DEBUG)
-    sh.setFormatter(formatter)
-    LOGGER.addHandler(sh)
-    fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Network_creation.log"),
-                                              maxBytes=1048576, backupCount=5, encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    LOGGER.addHandler(fh)
+LOGGER = logging.getLogger('Network_creation_tool')
+LOGGER.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
+sh = logging.StreamHandler()
+sh.setLevel(logging.DEBUG)
+sh.setFormatter(formatter)
+LOGGER.addHandler(sh)
+fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Network_creation.log"),
+                                          maxBytes=1048576, backupCount=5, encoding="utf-8")
+fh.setLevel(logging.DEBUG)
+fh.setFormatter(formatter)
+LOGGER.addHandler(fh)
 
 
 def log(logtype, *texts):
@@ -44,12 +42,13 @@ def log(logtype, *texts):
     else:
         LOGGER.warning("message type incorrect. Message: " + text)
 
+
 """
 TODO
 UI part
 """
 
-
+"""
 class CreationTool:
     def __init__(self, uifile):
         self.app = QApplication(sys.argv)
@@ -67,7 +66,7 @@ class CreationTool:
     def create_network (self):
         Network(self.ui.LE_Ipaddr.text())
 
-
+"""
 """
 TODO
 Network creation tool
@@ -78,12 +77,13 @@ class Network:
     """
     Base class for a network
     """
+    _counter = 1
 
     def __new__(cls, *args, **kwargs):
         try:
-            ipaddress.ip_network(args[0])
+            ipaddress.IPv4Interface(args[0])
         except ValueError:
-            print("not ip network format, network not created")
+            log("error", "Network creation: not ip network format, network not created, ip address argument: ", str(args[0]))
             return None
         else:
             return super().__new__(cls)
@@ -95,11 +95,13 @@ class Network:
         :param ipadd:
         :param name:
         """
-        self.ip = ipaddress.ip_network(ipadd)
-        self.name = name if name is not None else str(self.ip)
+        self.ip = ipaddress.IPv4Interface(ipadd).network
+        self.name = name if name is not None else "LAN"+str(Network._counter)
         self.subnets = {}
         self.devices = {}
-        self.vlans={}
+        self.vlans = {}
+        self.nb_vlan = 0
+        Network._counter += 1
         log("info", "network created, ip address:", str(self.ip))
 
     def create_subnet(self, ipadd):
@@ -123,10 +125,12 @@ class Network:
         create info dictionnary of the network and its subnetworks.
         :return:
         """
-        info={
+        info = {
+            "Name": self.name,
+            "Ip": str(self.ip),
             "Subnetworks": {},
             "Devices": {},
-            "Vlans":{},
+            "Vlans": {},
             "Number of hosts": None
         }
         for subip, subnet in self.subnets.items():
@@ -152,22 +156,29 @@ class Network:
 
 
 class Vlan:
-    def __new__(cls, *args, **kwargs):
-        try:
-            ipaddress.ip_network(args[1])
-        except ValueError:
-            print("not ip network format, vlan not created")
-            return None
-        else:
-            return super().__new__(cls)
 
-    def __init__(self, name, ipaddr):
-        self.name = name
-        self.ip= ipaddr
+    def __new__(cls, *args, **kwargs):
+        if isinstance(args[0], Network):
+            try:
+                ipaddress.ip_network(args[1])
+            except ValueError:
+                log("error", "Vlan creation: not ip network format. vlan not created")
+                return None
+            else:
+                return super().__new__(cls)
+        else:
+            log("error", "Vlan creation: No Network given as first argument. Vlan not created")
+            return None
+
+    def __init__(self, network, ipaddr, name=None):
+        self.network = network
+        self.name = name if name is not None else "VLAN"+str(self.network.nb_vlan)
+        self.ip = ipaddr
+        self.network.nb_vlan += 1
 
     def get_info(self):
         info = {}
-        pass
+        return info
 
 
 class NetworkDevice:
@@ -183,7 +194,7 @@ class Switch(NetworkDevice):
         super().__init__()
         pass
 
-init_logger()
+
 if __name__ == "__main__":
     pass
-    #CreationTool(Path("data/ui/creation_tool.ui"))
+    # CreationTool(Path("data/ui/creation_tool.ui"))

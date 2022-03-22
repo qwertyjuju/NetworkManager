@@ -1,0 +1,19 @@
+{
+  "switches": {
+    "catalyst-2960": {
+      "ports": [
+        {
+          "type": "fa",
+          "nb": 24
+        },
+        {
+          "type": "ge",
+          "nb": 2
+        }
+      ]
+    }
+  },
+  "routers": {
+
+  }
+}
