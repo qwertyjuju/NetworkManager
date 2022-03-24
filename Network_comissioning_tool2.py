@@ -44,7 +44,9 @@ class CommissionningTool:
             for cle_2 in self.data[cle].keys():
                 for cle_3 in self.data[cle][cle_2].keys():
                     ports = []
-                    for i in range(len(self.data[cle][cle_2][cle_3])):
+                    for port in data["ports"]:
+                        ports.extend([port["type"] + str(i) for i in range(port["nb"])])
+                    data["ports"] = ports
         print(self.data)
 
     def set_devices(self):
