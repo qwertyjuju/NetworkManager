@@ -4,8 +4,8 @@ import logging
 import logging.handlers
 import ipaddress
 from pathlib import Path
-# from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
-# from PyQt5 import uic
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+from PyQt5 import uic
 
 
 """
@@ -48,7 +48,7 @@ TODO
 UI part
 """
 
-"""
+
 class CreationTool:
     def __init__(self, uifile):
         self.app = QApplication(sys.argv)
@@ -66,7 +66,7 @@ class CreationTool:
     def create_network (self):
         Network(self.ui.LE_Ipaddr.text())
 
-"""
+
 """
 TODO
 Network creation tool
@@ -219,4 +219,4 @@ class Switch(NetworkDevice):
 
 if __name__ == "__main__":
     pass
-    # CreationTool(Path("data/ui/creation_tool.ui"))
+    CreationTool(Path("data/ui/creation_tool.ui"))

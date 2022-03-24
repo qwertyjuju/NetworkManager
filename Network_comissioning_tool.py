@@ -1,15 +1,39 @@
+import sys
 import time
 import logging
 import logging.handlers
 import pathlib
 import serial
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+from PyQt5 import uic
 
 commands=["ena",
           "conf t",
           "hostname ju",
           "enable secret azerty123"
           ]
+"""
+UI
+"""
 
+class CommissionningTool:
+    def __init__(self, uifile):
+        self.app = QApplication(sys.argv)
+        Ui, Window = uic.loadUiType(uifile)
+        self.window = Window()
+        self.ui = Ui()
+        self.ui.setupUi(self.window)
+        self.init_ui()
+        self.window.show()
+        self.app.exec_()
+    
+    def init_ui(self):
+        pass
+    
+"""
+logger
+"""
+        
 def init_logger():
     """
     creates logger object. The logger has 2 handlers: One handler
@@ -41,20 +65,21 @@ def log(logtype, *texts):
     else:
         LOGGER.warning("message type incorrect. Message: " + text)
 
-
+"""
+Writer
+"""
 class Writer:
     def __init__(self,port_com):
         self._ser = serial.Serial(timeout=1)
         self._ser.baudrate = 9600
         self._ser.port = port_com
-        self.initialised = 0
         self._ser.open()
         log("info","serial opened")
         self.initialised = 0
         while not self.initialised:
-            self._ser.write(b'\n')
             line = self._ser.readline().decode("utf-8").lower().replace('\r\n',"")
-            log("info", "console input: ", line)
+            self._ser.write(b'\n')
+            log("info", "console output: ", line)
             if "initial configuration dialog" in line:
                 self.write_command("no")
             elif line[-1:] in [">", "#"]:
@@ -72,7 +97,10 @@ class Writer:
         for command in commands:
             self.write_command(command)
             time.sleep(1)
-
+            
+    def print_line(self):
+        print(self._ser.readline())
+        
     def get_mode(self):
         pass
 
@@ -93,3 +121,4 @@ class Writer:
 LOGGER=init_logger()
 wr = Writer("COM1")
 wr.write_commands(commands)
+wr.close()

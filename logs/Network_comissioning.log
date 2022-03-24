@@ -1983,3 +1983,522 @@
 2022-03-17 17:41:09,051 | Network_comissioning | INFO | console input:  ju(config)#
 2022-03-17 17:41:09,051 | Network_comissioning | INFO | console input:  ju(config)#
 2022-03-20 21:32:38,562 | Network_comissioning | INFO | network created, ip address: 192.168.10.0/24
+2022-03-24 15:34:27,756 | Network_comissioning | INFO | serial opened
+2022-03-24 15:34:28,759 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:30,766 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:32,771 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:34,778 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:36,783 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:38,789 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:40,795 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:42,802 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:44,808 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:46,814 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:48,819 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:50,822 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:52,823 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:54,826 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:56,837 | Network_comissioning | INFO | console input:  
+2022-03-24 15:34:58,838 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:00,840 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:02,841 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:04,843 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:06,854 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:08,860 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:10,861 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:12,872 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:14,874 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:16,874 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:18,875 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:20,891 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:22,896 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:24,898 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:26,905 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:28,906 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:30,934 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:32,935 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:34,944 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:36,951 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:38,961 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:49,454 | Network_comissioning | INFO | serial opened
+2022-03-24 15:35:50,457 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:52,464 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:54,471 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:56,477 | Network_comissioning | INFO | console input:  
+2022-03-24 15:35:58,479 | Network_comissioning | INFO | console input:  
+2022-03-24 15:36:26,571 | Network_comissioning | INFO | serial opened
+2022-03-24 15:36:26,584 | Network_comissioning | INFO | console input:  
+2022-03-24 15:36:27,594 | Network_comissioning | INFO | console input:  switch>
+2022-03-24 15:44:06,593 | Network_comissioning | INFO | serial opened
+2022-03-24 15:44:06,593 | Network_comissioning | INFO | serial opened
+2022-03-24 15:44:07,594 | Network_comissioning | INFO | console input:  
+2022-03-24 15:44:07,594 | Network_comissioning | INFO | console input:  
+2022-03-24 15:44:09,620 | Network_comissioning | INFO | console input:  
+2022-03-24 15:44:09,620 | Network_comissioning | INFO | console input:  
+2022-03-24 15:44:10,635 | Network_comissioning | INFO | console input:  image passed digital signature verification
+2022-03-24 15:44:10,635 | Network_comissioning | INFO | console input:  image passed digital signature verification
+2022-03-24 15:44:59,376 | Network_comissioning | INFO | console input:  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+2022-03-24 15:44:59,376 | Network_comissioning | INFO | console input:  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+2022-03-24 15:45:01,386 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:01,386 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:02,389 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:02,389 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:03,401 | Network_comissioning | INFO | console input:  file "flash:/c2960x-universalk9-mz.152-2.e7/c2960x-universalk9-mz.152-2.e7.bin" uncompressed and installed, entry point: 0x3000
+2022-03-24 15:45:03,401 | Network_comissioning | INFO | console input:  file "flash:/c2960x-universalk9-mz.152-2.e7/c2960x-universalk9-mz.152-2.e7.bin" uncompressed and installed, entry point: 0x3000
+2022-03-24 15:45:04,414 | Network_comissioning | INFO | console input:  executing...
+2022-03-24 15:45:04,414 | Network_comissioning | INFO | console input:  executing...
+2022-03-24 15:45:05,419 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:05,419 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:06,431 | Network_comissioning | INFO | console input:                restricted rights legend
+2022-03-24 15:45:06,431 | Network_comissioning | INFO | console input:                restricted rights legend
+2022-03-24 15:45:07,438 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:07,438 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:08,452 | Network_comissioning | INFO | console input:  use, duplication, or disclosure by the government is
+2022-03-24 15:45:08,452 | Network_comissioning | INFO | console input:  use, duplication, or disclosure by the government is
+2022-03-24 15:45:09,452 | Network_comissioning | INFO | console input:  subject to restrictions as set forth in subparagraph
+2022-03-24 15:45:09,452 | Network_comissioning | INFO | console input:  subject to restrictions as set forth in subparagraph
+2022-03-24 15:45:10,462 | Network_comissioning | INFO | console input:  (c) of the commercial computer software - restricted
+2022-03-24 15:45:10,462 | Network_comissioning | INFO | console input:  (c) of the commercial computer software - restricted
+2022-03-24 15:45:11,475 | Network_comissioning | INFO | console input:  rights clause at far sec. 52.227-19 and subparagraph
+2022-03-24 15:45:11,475 | Network_comissioning | INFO | console input:  rights clause at far sec. 52.227-19 and subparagraph
+2022-03-24 15:45:12,494 | Network_comissioning | INFO | console input:  (c) (1) (ii) of the rights in technical data and computer
+2022-03-24 15:45:12,494 | Network_comissioning | INFO | console input:  (c) (1) (ii) of the rights in technical data and computer
+2022-03-24 15:45:13,509 | Network_comissioning | INFO | console input:  software clause at dfars sec. 252.227-7013.
+2022-03-24 15:45:13,509 | Network_comissioning | INFO | console input:  software clause at dfars sec. 252.227-7013.
+2022-03-24 15:45:14,530 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:14,530 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:15,532 | Network_comissioning | INFO | console input:             cisco systems, inc.
+2022-03-24 15:45:15,532 | Network_comissioning | INFO | console input:             cisco systems, inc.
+2022-03-24 15:45:16,532 | Network_comissioning | INFO | console input:             170 west tasman drive
+2022-03-24 15:45:16,532 | Network_comissioning | INFO | console input:             170 west tasman drive
+2022-03-24 15:45:17,544 | Network_comissioning | INFO | console input:             san jose, california 95134-1706
+2022-03-24 15:45:17,544 | Network_comissioning | INFO | console input:             san jose, california 95134-1706
+2022-03-24 15:45:18,559 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:18,559 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:19,564 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:19,564 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:20,569 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:20,569 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:21,574 | Network_comissioning | INFO | console input:  cisco ios software, c2960x software (c2960x-universalk9-m), version 15.2(2)e7, release software (fc3)
+2022-03-24 15:45:21,574 | Network_comissioning | INFO | console input:  cisco ios software, c2960x software (c2960x-universalk9-m), version 15.2(2)e7, release software (fc3)
+2022-03-24 15:45:22,577 | Network_comissioning | INFO | console input:  technical support: http://www.cisco.com/techsupport
+2022-03-24 15:45:22,577 | Network_comissioning | INFO | console input:  technical support: http://www.cisco.com/techsupport
+2022-03-24 15:45:23,592 | Network_comissioning | INFO | console input:  copyright (c) 1986-2017 by cisco systems, inc.
+2022-03-24 15:45:23,592 | Network_comissioning | INFO | console input:  copyright (c) 1986-2017 by cisco systems, inc.
+2022-03-24 15:45:24,593 | Network_comissioning | INFO | console input:  compiled wed 12-jul-17 13:06 by prod_rel_team
+2022-03-24 15:45:24,593 | Network_comissioning | INFO | console input:  compiled wed 12-jul-17 13:06 by prod_rel_team
+2022-03-24 15:45:25,608 | Network_comissioning | INFO | console input:  initializing flashfs...
+2022-03-24 15:45:25,608 | Network_comissioning | INFO | console input:  initializing flashfs...
+2022-03-24 15:45:26,624 | Network_comissioning | INFO | console input:  using driver version 4 for media type 1
+2022-03-24 15:45:26,624 | Network_comissioning | INFO | console input:  using driver version 4 for media type 1
+2022-03-24 15:45:27,636 | Network_comissioning | INFO | console input:  mifs[7]: 10 files, 1 directories
+2022-03-24 15:45:27,636 | Network_comissioning | INFO | console input:  mifs[7]: 10 files, 1 directories
+2022-03-24 15:45:28,642 | Network_comissioning | INFO | console input:  mifs[7]: total bytes     : 1806336   
+2022-03-24 15:45:28,642 | Network_comissioning | INFO | console input:  mifs[7]: total bytes     : 1806336   
+2022-03-24 15:45:29,662 | Network_comissioning | INFO | console input:  mifs[7]: bytes used      : 690688    
+2022-03-24 15:45:29,662 | Network_comissioning | INFO | console input:  mifs[7]: bytes used      : 690688    
+2022-03-24 15:45:30,675 | Network_comissioning | INFO | console input:  mifs[7]: bytes available : 1115648   
+2022-03-24 15:45:30,675 | Network_comissioning | INFO | console input:  mifs[7]: bytes available : 1115648   
+2022-03-24 15:45:31,676 | Network_comissioning | INFO | console input:  mifs[7]: mifs fsck took 0 seconds.
+2022-03-24 15:45:31,676 | Network_comissioning | INFO | console input:  mifs[7]: mifs fsck took 0 seconds.
+2022-03-24 15:45:32,693 | Network_comissioning | INFO | console input:  mifs[7]: initialization complete.
+2022-03-24 15:45:32,693 | Network_comissioning | INFO | console input:  mifs[7]: initialization complete.
+2022-03-24 15:45:33,713 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:33,713 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:34,726 | Network_comissioning | INFO | console input:  mifs[8]: 2 files, 1 directories
+2022-03-24 15:45:34,726 | Network_comissioning | INFO | console input:  mifs[8]: 2 files, 1 directories
+2022-03-24 15:45:35,731 | Network_comissioning | INFO | console input:  mifs[8]: total bytes     : 3870720   
+2022-03-24 15:45:35,731 | Network_comissioning | INFO | console input:  mifs[8]: total bytes     : 3870720   
+2022-03-24 15:45:36,740 | Network_comissioning | INFO | console input:  mifs[8]: bytes used      : 1213440   
+2022-03-24 15:45:36,740 | Network_comissioning | INFO | console input:  mifs[8]: bytes used      : 1213440   
+2022-03-24 15:45:37,760 | Network_comissioning | INFO | console input:  mifs[8]: bytes available : 2657280   
+2022-03-24 15:45:37,760 | Network_comissioning | INFO | console input:  mifs[8]: bytes available : 2657280   
+2022-03-24 15:45:38,772 | Network_comissioning | INFO | console input:  mifs[8]: mifs fsck took 0 seconds.
+2022-03-24 15:45:38,772 | Network_comissioning | INFO | console input:  mifs[8]: mifs fsck took 0 seconds.
+2022-03-24 15:45:39,798 | Network_comissioning | INFO | console input:  mifs[8]: initialization complete.
+2022-03-24 15:45:39,798 | Network_comissioning | INFO | console input:  mifs[8]: initialization complete.
+2022-03-24 15:45:40,810 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:40,810 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:41,812 | Network_comissioning | INFO | console input:  mifs[9]: 5 files, 1 directories
+2022-03-24 15:45:41,812 | Network_comissioning | INFO | console input:  mifs[9]: 5 files, 1 directories
+2022-03-24 15:45:42,821 | Network_comissioning | INFO | console input:  mifs[9]: total bytes     : 258048    
+2022-03-24 15:45:42,821 | Network_comissioning | INFO | console input:  mifs[9]: total bytes     : 258048    
+2022-03-24 15:45:43,836 | Network_comissioning | INFO | console input:  mifs[9]: bytes used      : 8192      
+2022-03-24 15:45:43,836 | Network_comissioning | INFO | console input:  mifs[9]: bytes used      : 8192      
+2022-03-24 15:45:44,845 | Network_comissioning | INFO | console input:  mifs[9]: bytes available : 249856    
+2022-03-24 15:45:44,845 | Network_comissioning | INFO | console input:  mifs[9]: bytes available : 249856    
+2022-03-24 15:45:45,857 | Network_comissioning | INFO | console input:  mifs[9]: mifs fsck took 0 seconds.
+2022-03-24 15:45:45,857 | Network_comissioning | INFO | console input:  mifs[9]: mifs fsck took 0 seconds.
+2022-03-24 15:45:46,863 | Network_comissioning | INFO | console input:  mifs[9]: initialization complete.
+2022-03-24 15:45:46,863 | Network_comissioning | INFO | console input:  mifs[9]: initialization complete.
+2022-03-24 15:45:47,866 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:47,866 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:48,880 | Network_comissioning | INFO | console input:  mifs[10]: 5 files, 1 directories
+2022-03-24 15:45:48,880 | Network_comissioning | INFO | console input:  mifs[10]: 5 files, 1 directories
+2022-03-24 15:45:49,890 | Network_comissioning | INFO | console input:  mifs[10]: total bytes     : 258048    
+2022-03-24 15:45:49,890 | Network_comissioning | INFO | console input:  mifs[10]: total bytes     : 258048    
+2022-03-24 15:45:50,903 | Network_comissioning | INFO | console input:  mifs[10]: bytes used      : 8192      
+2022-03-24 15:45:50,903 | Network_comissioning | INFO | console input:  mifs[10]: bytes used      : 8192      
+2022-03-24 15:45:51,920 | Network_comissioning | INFO | console input:  mifs[10]: bytes available : 249856    
+2022-03-24 15:45:51,920 | Network_comissioning | INFO | console input:  mifs[10]: bytes available : 249856    
+2022-03-24 15:45:52,936 | Network_comissioning | INFO | console input:  mifs[10]: mifs fsck took 1 seconds.
+2022-03-24 15:45:52,936 | Network_comissioning | INFO | console input:  mifs[10]: mifs fsck took 1 seconds.
+2022-03-24 15:45:53,942 | Network_comissioning | INFO | console input:  mifs[10]: initialization complete.
+2022-03-24 15:45:53,942 | Network_comissioning | INFO | console input:  mifs[10]: initialization complete.
+2022-03-24 15:45:54,951 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:54,951 | Network_comissioning | INFO | console input:  
+2022-03-24 15:45:55,952 | Network_comissioning | INFO | console input:  mifs[11]: 661 files, 20 directories
+2022-03-24 15:45:55,952 | Network_comissioning | INFO | console input:  mifs[11]: 661 files, 20 directories
+2022-03-24 15:45:56,958 | Network_comissioning | INFO | console input:  mifs[11]: total bytes     : 122185728 
+2022-03-24 15:45:56,958 | Network_comissioning | INFO | console input:  mifs[11]: total bytes     : 122185728 
+2022-03-24 15:45:57,962 | Network_comissioning | INFO | console input:  mifs[11]: bytes used      : 27184640  
+2022-03-24 15:45:57,962 | Network_comissioning | INFO | console input:  mifs[11]: bytes used      : 27184640  
+2022-03-24 15:45:58,980 | Network_comissioning | INFO | console input:  mifs[11]: bytes available : 95001088  
+2022-03-24 15:45:58,980 | Network_comissioning | INFO | console input:  mifs[11]: bytes available : 95001088  
+2022-03-24 15:45:59,984 | Network_comissioning | INFO | console input:  mifs[11]: mifs fsck took 0 seconds.
+2022-03-24 15:45:59,984 | Network_comissioning | INFO | console input:  mifs[11]: mifs fsck took 0 seconds.
+2022-03-24 15:46:00,984 | Network_comissioning | INFO | console input:  mifs[11]: initialization complete.
+2022-03-24 15:46:00,984 | Network_comissioning | INFO | console input:  mifs[11]: initialization complete.
+2022-03-24 15:46:01,989 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:01,989 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:02,990 | Network_comissioning | INFO | console input:  ...done initializing flashfs.
+2022-03-24 15:46:02,990 | Network_comissioning | INFO | console input:  ...done initializing flashfs.
+2022-03-24 15:46:04,003 | Network_comissioning | INFO | console input:  checking for bootloader upgrade..
+2022-03-24 15:46:04,003 | Network_comissioning | INFO | console input:  checking for bootloader upgrade..
+2022-03-24 15:46:05,008 | Network_comissioning | INFO | console input:  boot loader upgrade not required (stage 2)
+2022-03-24 15:46:05,008 | Network_comissioning | INFO | console input:  boot loader upgrade not required (stage 2)
+2022-03-24 15:46:06,010 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:06,010 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:07,016 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:07,016 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:08,018 | Network_comissioning | INFO | console input:  fips: flash key check : begin
+2022-03-24 15:46:08,018 | Network_comissioning | INFO | console input:  fips: flash key check : begin
+2022-03-24 15:46:09,022 | Network_comissioning | INFO | console input:  fips: flash key check : end, not found, fips mode not enabled
+2022-03-24 15:46:09,022 | Network_comissioning | INFO | console input:  fips: flash key check : end, not found, fips mode not enabled
+2022-03-24 15:46:10,024 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:10,024 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:11,037 | Network_comissioning | INFO | console input:  post: ma bist : begin
+2022-03-24 15:46:11,037 | Network_comissioning | INFO | console input:  post: ma bist : begin
+2022-03-24 15:46:12,047 | Network_comissioning | INFO | console input:  post: ma bist : end, status passed
+2022-03-24 15:46:12,047 | Network_comissioning | INFO | console input:  post: ma bist : end, status passed
+2022-03-24 15:46:13,050 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:13,050 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:14,069 | Network_comissioning | INFO | console input:  post: tcam bist : begin
+2022-03-24 15:46:14,069 | Network_comissioning | INFO | console input:  post: tcam bist : begin
+2022-03-24 15:46:15,080 | Network_comissioning | INFO | console input:  post: tcam bist : end, status passed
+2022-03-24 15:46:15,080 | Network_comissioning | INFO | console input:  post: tcam bist : end, status passed
+2022-03-24 15:46:16,083 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:16,083 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:17,105 | Network_comissioning | INFO | console input:  post: act2 authentication : begin
+2022-03-24 15:46:17,105 | Network_comissioning | INFO | console input:  post: act2 authentication : begin
+2022-03-24 15:46:18,123 | Network_comissioning | INFO | console input:  post: act2 authentication : end, status passed
+2022-03-24 15:46:18,123 | Network_comissioning | INFO | console input:  post: act2 authentication : end, status passed
+2022-03-24 15:46:19,136 | Network_comissioning | INFO | console input:  extracting front_end/front_end_ucode_info (43 bytes)
+2022-03-24 15:46:19,136 | Network_comissioning | INFO | console input:  extracting front_end/front_end_ucode_info (43 bytes)
+2022-03-24 15:46:20,141 | Network_comissioning | INFO | console input:   software version is different so extracting
+2022-03-24 15:46:20,141 | Network_comissioning | INFO | console input:   software version is different so extracting
+2022-03-24 15:46:21,160 | Network_comissioning | INFO | console input:   the whole bundle
+2022-03-24 15:46:21,160 | Network_comissioning | INFO | console input:   the whole bundle
+2022-03-24 15:46:22,162 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:22,162 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:23,168 | Network_comissioning | INFO | console input:  waiting for stack master election...
+2022-03-24 15:46:23,168 | Network_comissioning | INFO | console input:  waiting for stack master election...
+2022-03-24 15:46:24,176 | Network_comissioning | INFO | console input:  post: thermal, fan tests : begin
+2022-03-24 15:46:24,176 | Network_comissioning | INFO | console input:  post: thermal, fan tests : begin
+2022-03-24 15:46:25,176 | Network_comissioning | INFO | console input:  post: thermal, fan tests : end, status passed
+2022-03-24 15:46:25,176 | Network_comissioning | INFO | console input:  post: thermal, fan tests : end, status passed
+2022-03-24 15:46:26,183 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:26,183 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:27,189 | Network_comissioning | INFO | console input:  post: portasic stack port loopback tests : begin
+2022-03-24 15:46:27,189 | Network_comissioning | INFO | console input:  post: portasic stack port loopback tests : begin
+2022-03-24 15:46:28,202 | Network_comissioning | INFO | console input:  post: portasic stack port loopback tests : end, status passed
+2022-03-24 15:46:28,202 | Network_comissioning | INFO | console input:  post: portasic stack port loopback tests : end, status passed
+2022-03-24 15:46:29,212 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:29,212 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:30,228 | Network_comissioning | INFO | console input:  post: portasic port loopback tests : begin
+2022-03-24 15:46:30,228 | Network_comissioning | INFO | console input:  post: portasic port loopback tests : begin
+2022-03-24 15:46:31,234 | Network_comissioning | INFO | console input:  post: portasic port loopback tests : end, status passed
+2022-03-24 15:46:31,234 | Network_comissioning | INFO | console input:  post: portasic port loopback tests : end, status passed
+2022-03-24 15:46:32,256 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:32,256 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:33,264 | Network_comissioning | INFO | console input:  post: emac loopback tests : begin
+2022-03-24 15:46:33,264 | Network_comissioning | INFO | console input:  post: emac loopback tests : begin
+2022-03-24 15:46:34,278 | Network_comissioning | INFO | console input:  post: emac loopback tests : mac loopback passed
+2022-03-24 15:46:34,278 | Network_comissioning | INFO | console input:  post: emac loopback tests : mac loopback passed
+2022-03-24 15:46:35,299 | Network_comissioning | INFO | console input:  post: emac loopback tests : phy loopback passed
+2022-03-24 15:46:35,299 | Network_comissioning | INFO | console input:  post: emac loopback tests : phy loopback passed
+2022-03-24 15:46:36,318 | Network_comissioning | INFO | console input:  post: emac loopback tests : end, status passed
+2022-03-24 15:46:36,318 | Network_comissioning | INFO | console input:  post: emac loopback tests : end, status passed
+2022-03-24 15:46:37,340 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:37,340 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:38,345 | Network_comissioning | INFO | console input:  election complete
+2022-03-24 15:46:38,345 | Network_comissioning | INFO | console input:  election complete
+2022-03-24 15:46:39,369 | Network_comissioning | INFO | console input:  switch 1 booting as master
+2022-03-24 15:46:39,369 | Network_comissioning | INFO | console input:  switch 1 booting as master
+2022-03-24 15:46:40,380 | Network_comissioning | INFO | console input:  waiting for port download...complete
+2022-03-24 15:46:40,380 | Network_comissioning | INFO | console input:  waiting for port download...complete
+2022-03-24 15:46:41,386 | Network_comissioning | INFO | console input:  initializing port extension feature support...
+2022-03-24 15:46:41,386 | Network_comissioning | INFO | console input:  initializing port extension feature support...
+2022-03-24 15:46:42,388 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:42,388 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:43,399 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:43,399 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:44,403 | Network_comissioning | INFO | console input:  this product contains cryptographic features and is subject to united
+2022-03-24 15:46:44,403 | Network_comissioning | INFO | console input:  this product contains cryptographic features and is subject to united
+2022-03-24 15:46:45,403 | Network_comissioning | INFO | console input:  states and local country laws governing import, export, transfer and
+2022-03-24 15:46:45,403 | Network_comissioning | INFO | console input:  states and local country laws governing import, export, transfer and
+2022-03-24 15:46:46,423 | Network_comissioning | INFO | console input:  use. delivery of cisco cryptographic products does not imply
+2022-03-24 15:46:46,423 | Network_comissioning | INFO | console input:  use. delivery of cisco cryptographic products does not imply
+2022-03-24 15:46:47,436 | Network_comissioning | INFO | console input:  third-party authority to import, export, distribute or use encryption.
+2022-03-24 15:46:47,436 | Network_comissioning | INFO | console input:  third-party authority to import, export, distribute or use encryption.
+2022-03-24 15:46:48,447 | Network_comissioning | INFO | console input:  importers, exporters, distributors and users are responsible for
+2022-03-24 15:46:48,447 | Network_comissioning | INFO | console input:  importers, exporters, distributors and users are responsible for
+2022-03-24 15:46:49,451 | Network_comissioning | INFO | console input:  compliance with u.s. and local country laws. by using this product you
+2022-03-24 15:46:49,451 | Network_comissioning | INFO | console input:  compliance with u.s. and local country laws. by using this product you
+2022-03-24 15:46:50,466 | Network_comissioning | INFO | console input:  agree to comply with applicable laws and regulations. if you are unable
+2022-03-24 15:46:50,466 | Network_comissioning | INFO | console input:  agree to comply with applicable laws and regulations. if you are unable
+2022-03-24 15:46:51,468 | Network_comissioning | INFO | console input:  to comply with u.s. and local laws, return this product immediately.
+2022-03-24 15:46:51,468 | Network_comissioning | INFO | console input:  to comply with u.s. and local laws, return this product immediately.
+2022-03-24 15:46:52,470 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:52,470 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:53,477 | Network_comissioning | INFO | console input:  a summary of u.s. laws governing cisco cryptographic products may be found at:
+2022-03-24 15:46:53,477 | Network_comissioning | INFO | console input:  a summary of u.s. laws governing cisco cryptographic products may be found at:
+2022-03-24 15:46:54,482 | Network_comissioning | INFO | console input:  http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+2022-03-24 15:46:54,482 | Network_comissioning | INFO | console input:  http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+2022-03-24 15:46:55,489 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:55,489 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:56,496 | Network_comissioning | INFO | console input:  if you require further assistance please contact us by sending email to
+2022-03-24 15:46:56,496 | Network_comissioning | INFO | console input:  if you require further assistance please contact us by sending email to
+2022-03-24 15:46:57,506 | Network_comissioning | INFO | console input:  export@cisco.com.
+2022-03-24 15:46:57,506 | Network_comissioning | INFO | console input:  export@cisco.com.
+2022-03-24 15:46:58,512 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:58,512 | Network_comissioning | INFO | console input:  
+2022-03-24 15:46:59,525 | Network_comissioning | INFO | console input:  cisco ws-c2960x-24ts-l (apm86xxx) processor (revision s0) with 524288k bytes of memory.
+2022-03-24 15:46:59,525 | Network_comissioning | INFO | console input:  cisco ws-c2960x-24ts-l (apm86xxx) processor (revision s0) with 524288k bytes of memory.
+2022-03-24 15:47:00,534 | Network_comissioning | INFO | console input:  processor board id fcw2317a5um
+2022-03-24 15:47:00,534 | Network_comissioning | INFO | console input:  processor board id fcw2317a5um
+2022-03-24 15:47:01,545 | Network_comissioning | INFO | console input:  last reset from power-on
+2022-03-24 15:47:01,545 | Network_comissioning | INFO | console input:  last reset from power-on
+2022-03-24 15:47:02,546 | Network_comissioning | INFO | console input:  1 virtual ethernet interface
+2022-03-24 15:47:02,546 | Network_comissioning | INFO | console input:  1 virtual ethernet interface
+2022-03-24 15:47:03,561 | Network_comissioning | INFO | console input:  1 fastethernet interface
+2022-03-24 15:47:03,561 | Network_comissioning | INFO | console input:  1 fastethernet interface
+2022-03-24 15:47:04,577 | Network_comissioning | INFO | console input:  28 gigabit ethernet interfaces
+2022-03-24 15:47:04,577 | Network_comissioning | INFO | console input:  28 gigabit ethernet interfaces
+2022-03-24 15:47:05,585 | Network_comissioning | INFO | console input:  the password-recovery mechanism is enabled.
+2022-03-24 15:47:05,585 | Network_comissioning | INFO | console input:  the password-recovery mechanism is enabled.
+2022-03-24 15:47:06,592 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:06,592 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:07,599 | Network_comissioning | INFO | console input:  512k bytes of flash-simulated non-volatile configuration memory.
+2022-03-24 15:47:07,599 | Network_comissioning | INFO | console input:  512k bytes of flash-simulated non-volatile configuration memory.
+2022-03-24 15:47:08,600 | Network_comissioning | INFO | console input:  base ethernet mac address       : c4:c6:03:1f:6f:00
+2022-03-24 15:47:08,600 | Network_comissioning | INFO | console input:  base ethernet mac address       : c4:c6:03:1f:6f:00
+2022-03-24 15:47:09,613 | Network_comissioning | INFO | console input:  motherboard assembly number     : 73-16695-05
+2022-03-24 15:47:09,613 | Network_comissioning | INFO | console input:  motherboard assembly number     : 73-16695-05
+2022-03-24 15:47:10,622 | Network_comissioning | INFO | console input:  power supply part number        : 341-0529-02
+2022-03-24 15:47:10,622 | Network_comissioning | INFO | console input:  power supply part number        : 341-0529-02
+2022-03-24 15:47:11,623 | Network_comissioning | INFO | console input:  motherboard serial number       : foc231721f0
+2022-03-24 15:47:11,623 | Network_comissioning | INFO | console input:  motherboard serial number       : foc231721f0
+2022-03-24 15:47:12,633 | Network_comissioning | INFO | console input:  power supply serial number      : dcb2314517z
+2022-03-24 15:47:12,633 | Network_comissioning | INFO | console input:  power supply serial number      : dcb2314517z
+2022-03-24 15:47:13,645 | Network_comissioning | INFO | console input:  model revision number           : s0
+2022-03-24 15:47:13,645 | Network_comissioning | INFO | console input:  model revision number           : s0
+2022-03-24 15:47:14,665 | Network_comissioning | INFO | console input:  motherboard revision number     : d0
+2022-03-24 15:47:14,665 | Network_comissioning | INFO | console input:  motherboard revision number     : d0
+2022-03-24 15:47:15,672 | Network_comissioning | INFO | console input:  model number                    : ws-c2960x-24ts-l
+2022-03-24 15:47:15,672 | Network_comissioning | INFO | console input:  model number                    : ws-c2960x-24ts-l
+2022-03-24 15:47:16,683 | Network_comissioning | INFO | console input:  daughterboard assembly number   : 73-14200-03
+2022-03-24 15:47:16,683 | Network_comissioning | INFO | console input:  daughterboard assembly number   : 73-14200-03
+2022-03-24 15:47:17,699 | Network_comissioning | INFO | console input:  daughterboard serial number     : foc23165b28
+2022-03-24 15:47:17,699 | Network_comissioning | INFO | console input:  daughterboard serial number     : foc23165b28
+2022-03-24 15:47:18,706 | Network_comissioning | INFO | console input:  system serial number            : fcw2317a5um
+2022-03-24 15:47:18,706 | Network_comissioning | INFO | console input:  system serial number            : fcw2317a5um
+2022-03-24 15:47:19,711 | Network_comissioning | INFO | console input:  top assembly part number        : 68-100473-02
+2022-03-24 15:47:19,711 | Network_comissioning | INFO | console input:  top assembly part number        : 68-100473-02
+2022-03-24 15:47:20,712 | Network_comissioning | INFO | console input:  top assembly revision number    : j0
+2022-03-24 15:47:20,712 | Network_comissioning | INFO | console input:  top assembly revision number    : j0
+2022-03-24 15:47:21,715 | Network_comissioning | INFO | console input:  version id                      : v05
+2022-03-24 15:47:21,715 | Network_comissioning | INFO | console input:  version id                      : v05
+2022-03-24 15:47:22,727 | Network_comissioning | INFO | console input:  clei code number                : cmmmu00ard
+2022-03-24 15:47:22,727 | Network_comissioning | INFO | console input:  clei code number                : cmmmu00ard
+2022-03-24 15:47:23,741 | Network_comissioning | INFO | console input:  daughterboard revision number   : b0
+2022-03-24 15:47:23,741 | Network_comissioning | INFO | console input:  daughterboard revision number   : b0
+2022-03-24 15:47:24,745 | Network_comissioning | INFO | console input:  hardware board revision number  : 0x19
+2022-03-24 15:47:24,745 | Network_comissioning | INFO | console input:  hardware board revision number  : 0x19
+2022-03-24 15:47:25,753 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:25,753 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:26,761 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:26,761 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:27,772 | Network_comissioning | INFO | console input:  switch ports model                     sw version            sw image                 
+2022-03-24 15:47:27,772 | Network_comissioning | INFO | console input:  switch ports model                     sw version            sw image                 
+2022-03-24 15:47:28,775 | Network_comissioning | INFO | console input:  ------ ----- -----                     ----------            ----------               
+2022-03-24 15:47:28,775 | Network_comissioning | INFO | console input:  ------ ----- -----                     ----------            ----------               
+2022-03-24 15:47:29,786 | Network_comissioning | INFO | console input:  *    1 28    ws-c2960x-24ts-l          15.2(2)e7             c2960x-universalk9-m     
+2022-03-24 15:47:29,786 | Network_comissioning | INFO | console input:  *    1 28    ws-c2960x-24ts-l          15.2(2)e7             c2960x-universalk9-m     
+2022-03-24 15:47:30,800 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:30,800 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:31,808 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:31,808 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:33,809 | Network_comissioning | INFO | console input:  adsie 
+2022-03-24 15:47:33,809 | Network_comissioning | INFO | console input:  adsie 
+2022-03-24 15:47:35,823 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:35,823 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:37,830 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:37,830 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:39,844 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:39,844 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:41,862 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:41,862 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:43,875 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:43,875 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:45,883 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:45,883 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:47,900 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:47,900 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:49,907 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:49,907 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:51,928 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:51,928 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:53,942 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:53,942 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:55,948 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:55,948 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:57,969 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:57,969 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:59,970 | Network_comissioning | INFO | console input:  
+2022-03-24 15:47:59,970 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:01,997 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:01,997 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:04,021 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:04,021 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:06,035 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:06,035 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:08,043 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:08,043 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:10,062 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:10,062 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:12,089 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:12,089 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:14,103 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:14,103 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:16,113 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:16,113 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:18,134 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:18,134 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:20,144 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:20,144 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:22,162 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:22,162 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:24,186 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:24,186 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:26,208 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:26,208 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:28,226 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:28,226 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:30,233 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:30,233 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:32,252 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:32,252 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:34,260 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:34,260 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:36,285 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:36,285 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:38,299 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:38,299 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:40,316 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:40,316 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:42,324 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:42,324 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:44,340 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:44,340 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:46,356 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:46,356 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:48,368 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:48,368 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:50,371 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:50,371 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:52,386 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:52,386 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:54,403 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:54,403 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:56,409 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:56,409 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:58,425 | Network_comissioning | INFO | console input:  
+2022-03-24 15:48:58,425 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:00,447 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:00,447 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:02,465 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:02,465 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:04,491 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:04,491 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:06,519 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:06,519 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:08,537 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:08,537 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:10,567 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:10,567 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:12,577 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:12,577 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:14,597 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:14,597 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:16,606 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:16,606 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:18,630 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:18,630 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:20,647 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:20,647 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:22,663 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:22,663 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:24,671 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:24,671 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:26,684 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:26,684 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:28,690 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:28,690 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:30,711 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:30,711 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:32,726 | Network_comissioning | INFO | console input:  
+2022-03-24 15:49:32,726 | Network_comissioning | INFO | console input:  
+2022-03-24 15:51:09,064 | Network_comissioning | INFO | serial opened
+2022-03-24 15:51:09,064 | Network_comissioning | INFO | serial opened
+2022-03-24 15:51:09,064 | Network_comissioning | INFO | serial opened
+2022-03-24 15:51:09,064 | Network_comissioning | INFO | serial opened
+2022-03-24 15:51:10,068 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:10,068 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:10,068 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:10,068 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:12,095 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:12,095 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:12,095 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:12,095 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:14,099 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:14,099 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:14,099 | Network_comissioning | INFO | console output:  
+2022-03-24 15:51:14,099 | Network_comissioning | INFO | console output:  
+2022-03-24 15:57:07,471 | Network_comissioning | INFO | serial opened
+2022-03-24 15:57:07,471 | Network_comissioning | INFO | serial opened
+2022-03-24 15:57:07,484 | Network_comissioning | INFO | console output:  
+2022-03-24 15:57:07,484 | Network_comissioning | INFO | console output:  
+2022-03-24 15:57:08,487 | Network_comissioning | INFO | console output:  % please answer 'yes' or 'no'.
+2022-03-24 15:57:08,487 | Network_comissioning | INFO | console output:  % please answer 'yes' or 'no'.
+2022-03-24 15:57:09,494 | Network_comissioning | INFO | console output:  would you like to enter the initial configuration dialog? [yes/no]: 
+2022-03-24 15:57:09,494 | Network_comissioning | INFO | console output:  would you like to enter the initial configuration dialog? [yes/no]: 
+2022-03-24 15:57:10,498 | Network_comissioning | INFO | console output:  % please answer 'yes' or 'no'.
+2022-03-24 15:57:10,498 | Network_comissioning | INFO | console output:  % please answer 'yes' or 'no'.
+2022-03-24 15:57:11,507 | Network_comissioning | INFO | console output:  would you like to enter the initial configuration dialog? [yes/no]: 
+2022-03-24 15:57:11,507 | Network_comissioning | INFO | console output:  would you like to enter the initial configuration dialog? [yes/no]: 
+2022-03-24 15:57:12,515 | Network_comissioning | INFO | console output:  % please answer 'yes' or 'no'.
+2022-03-24 15:57:12,515 | Network_comissioning | INFO | console output:  % please answer 'yes' or 'no'.
+2022-03-24 15:57:13,516 | Network_comissioning | INFO | console output:  would you like to enter the initial configuration dialog? [yes/no]: no
+2022-03-24 15:57:13,516 | Network_comissioning | INFO | console output:  would you like to enter the initial configuration dialog? [yes/no]: no
+2022-03-24 15:57:14,531 | Network_comissioning | INFO | console output:  switch>
+2022-03-24 15:57:14,531 | Network_comissioning | INFO | console output:  switch>
+2022-03-24 16:26:11,130 | Network_comissioning | INFO | serial opened
+2022-03-24 16:26:12,139 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:14,147 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:16,150 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:18,154 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:20,158 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:22,177 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:24,195 | Network_comissioning | INFO | console output:  
+2022-03-24 16:26:26,200 | Network_comissioning | INFO | console output:  
