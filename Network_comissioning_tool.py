@@ -54,6 +54,7 @@ class CommissionningTool:
         self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
 
     def create_ports(self):
+        
         self.ui.LW_1.clear()
         self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()]["ports"])
 

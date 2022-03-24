@@ -125,16 +125,6 @@
      <string>Exit</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="CB_mode_int">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>190</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
@@ -205,6 +195,32 @@
     </property>
     <property name="text">
      <string>Ports :</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>200</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Acces</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>200</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trunk</string>
     </property>
    </widget>
   </widget>
