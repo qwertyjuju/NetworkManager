@@ -28,15 +28,18 @@ class CommissionningTool:
         self.init_data("data/device_data.json")
         self.init_ui()
         self.window.show()
-        self.app.exec_()
+        self.app.exec()
     
     def init_ui(self):
         self.ui.B_exit.clicked.connect(self.exit_prog)
-        self.ui.CB_device_type.currentIndexChanged.connect(self.set_devices)
-        self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
-        self.ui.CB_switch_type.currentIndexChanged.connect(self.create_ports)
-        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()]["ports"])
+        self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
+        self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.ui.CB_device_ref.activated.connect(self.update_ports)
+        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
         #self.ui.B_create_device.clicked.connect()
+
+    def test(self):
+        print("test")
 
     def init_data(self,file):
         with open(file,'r',encoding="UTF-8") as f:
@@ -47,16 +50,17 @@ class CommissionningTool:
                 for port in data["ports"]:
                     ports.extend([port["type"] + str(i) for i in range(port["nb"])])
                 data["ports"] = ports
-        print(self.data)
+        log("info", "commissioning tool data : ",str(self.data))
 
-    def set_devices(self):
-        self.ui.CB_switch_type.clear()
-        self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
+    def update_devices(self):
+        self.ui.CB_device_ref.clear()
+        self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.update_ports()
 
-    def create_ports(self):
-
+    def update_ports(self):
         self.ui.LW_1.clear()
-        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()]["ports"])
+        print(self.ui.CB_device_type.currentText(), self.ui.CB_device_ref.currentText())
+        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
 
     def exit_prog(self):
         sys.exit()

@@ -1,6 +1,6 @@
 {
   "Switch": {
-    "Catalyst-2960": {
+    "Catalyst-2960X": {
       "ports": [
         {
           "type": "g1/0/",
@@ -12,10 +12,10 @@
         }
       ]
     },
-    "Catalyst-2860": {
+    "Catalyst-2960": {
       "ports": [
         {
-          "type": "f0/",
+          "type": "f1/0/",
           "nb": 24
         },
         {

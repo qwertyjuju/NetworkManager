@@ -86,7 +86,7 @@
      <string>Device type:</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="CB_switch_type">
+   <widget class="QComboBox" name="CB_device_ref">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -130,12 +130,12 @@
      <rect>
       <x>40</x>
       <y>160</y>
-      <width>81</width>
+      <width>121</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Device Type: </string>
+     <string>Device reference: </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
