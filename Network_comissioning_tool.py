@@ -2,7 +2,7 @@ import sys
 import time
 import logging
 import logging.handlers
-import pathlib
+from pathlib import Path
 import serial
 import json
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
@@ -19,51 +19,91 @@ UI
 
 class CommissionningTool:
     def __init__(self, uifile):
-        self.data = dict()
-        self.app = QApplication(sys.argv)
-        Ui, Window = uic.loadUiType(uifile)
-        self.window = Window()
-        self.ui = Ui()
-        self.ui.setupUi(self.window)
-        self.init_data("data/device_data.json")
-        self.init_ui()
-        self.window.show()
-        self.app.exec()
+            self.data = dict()
+            self.deviceconfig = DeviceConfig()
+            self.app = QApplication(sys.argv)
+            Ui, Window = uic.loadUiType(uifile)
+            self.window = Window()
+            self.ui = Ui()
+            self.ui.setupUi(self.window)
+            self.init_data("data/device_data.json")
+            self.init_ui()
+            self.window.show()
+            self.app.exec()
+
     
     def init_ui(self):
         self.ui.B_exit.clicked.connect(self.exit_prog)
+        self.ui.LE_device_name.editingFinished.connect(self.update_name)
         self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
         self.ui.CB_device_ref.activated.connect(self.update_ports)
-        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
-        #self.ui.B_create_device.clicked.connect()
+        self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
+        self.update_ports()
 
-    def test(self):
-        print("test")
-
-    def init_data(self,file):
-        with open(file,'r',encoding="UTF-8") as f:
+    def init_data(self, file):
+        with open(file, 'r', encoding="UTF-8") as f:
             self.data.update(json.load(f))
         for cle in self.data.keys():
-            for cle_2,data in self.data[cle].items():
+            for cle_2, data in self.data[cle].items():
                 ports = []
                 for port in data["ports"]:
                     ports.extend([port["type"] + str(i) for i in range(port["nb"])])
                 data["ports"] = ports
+
         log("info", "commissioning tool data : ",str(self.data))
 
     def update_devices(self):
         self.ui.CB_device_ref.clear()
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
         self.update_ports()
+
+    def update_name(self):
+        if self.ui.LE_device_name.text() != "":
+            self.deviceconfig.set_name(self.ui.LE_device_name.text())
 
     def update_ports(self):
         self.ui.LW_1.clear()
-        print(self.ui.CB_device_type.currentText(), self.ui.CB_device_ref.currentText())
         self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
+        self.deviceconfig.set_ports(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
 
     def exit_prog(self):
         sys.exit()
+
+
+class DeviceConfig:
+
+    def __init__(self):
+        self.name = None
+        self.data={
+            "name": self.name,
+            "device_type": None,
+            "device_ref": None,
+            "ports": {}
+        }
+
+    def set_ports(self, portlist):
+        self.data["ports"]= {port: None for port in portlist}
+
+    def set_device_type(self, devicetype):
+        self.data["device_type"] = devicetype
+
+    def set_device_ref(self, deviceref):
+        self.data["device_ref"] = deviceref
+
+    def set_name(self, name):
+        self.name = name
+        self.data["name"] = self.name
+
+    def save_json(self):
+        if self.name is not None:
+            with open(Path("data/configs").joinpath(self.name+".json"), "w", encoding="utf-8") as f:
+                json.dump(self.data, f)
+        else:
+            log("warning", "config not saved, no name was set.")
+
+
 """
 logger
 """
@@ -81,7 +121,7 @@ def init_logger():
     sh.setLevel(logging.DEBUG)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-    fh = logging.handlers.RotatingFileHandler(filename=pathlib.Path("logs/Network_comissioning.log"),
+    fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Network_comissioning.log"),
                                               maxBytes=1048576, backupCount=5, encoding="utf-8")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
@@ -152,5 +192,6 @@ class Writer:
         """
         return self._ser.readline()
 
-LOGGER=init_logger()
-ct = CommissionningTool("data/ui/commissioning_tool.ui")
+if __name__ == "__main__":
+    LOGGER=init_logger()
+    ct = CommissionningTool("data/ui/commissioning_tool.ui")
