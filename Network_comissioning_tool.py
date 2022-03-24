@@ -84,7 +84,7 @@ class DeviceConfig:
         }
 
     def set_ports(self, portlist):
-        self.data["ports"]= {port: None for port in portlist}
+        self.data["ports"] = {port: None for port in portlist}
 
     def set_device_type(self, devicetype):
         self.data["device_type"] = devicetype
@@ -99,7 +99,7 @@ class DeviceConfig:
     def save_json(self):
         if self.name is not None:
             with open(Path("data/configs").joinpath(self.name+".json"), "w", encoding="utf-8") as f:
-                json.dump(self.data, f)
+                json.dump(self.data, f, indent=4)
         else:
             log("warning", "config not saved, no name was set.")
 
