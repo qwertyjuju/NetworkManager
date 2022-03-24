@@ -40,12 +40,18 @@ class CommissionningTool:
     def init_data(self,file):
         with open(file,'r',encoding="UTF-8") as f:
             self.data.update(json.load(f))
+        for cle in self.data.keys():
+            for cle_2, data in self.data[cle].items():
+                ports=[]
+                i for i in data["ports"]
 
     def set_devices(self):
-        self.ui.lw_1.clear()
         self.ui.CB_switch_type.clear()
-        self.ui.lw_1.addItems(self.data[self.ui.CB_device_type.currentText()])
         self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
+
+    def create_ports(self):
+        self.ui.lw_1.clear()
+        self.ui.lw_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()])
 
     def exit_prog(self):
         sys.exit()

@@ -3,7 +3,7 @@
     "Catalyst-2960": {
       "ports": [
         {
-          "type": "fa",
+          "type": "g1/0/",
           "nb": 24
         },
         {
