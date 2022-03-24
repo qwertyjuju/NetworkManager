@@ -34,7 +34,8 @@ class CommissionningTool:
         self.ui.B_exit.clicked.connect(self.exit_prog)
         self.ui.CB_device_type.currentIndexChanged.connect(self.set_devices)
         self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
-        self.ui.lw_1.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.ui.CB_switch_type.currentIndexChanged.connect(self.create_ports)
+        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()]["ports"])
         #self.ui.B_create_device.clicked.connect()
 
     def init_data(self,file):
@@ -53,8 +54,8 @@ class CommissionningTool:
         self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
 
     def create_ports(self):
-        self.ui.lw_1.clear()
-        self.ui.lw_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()])
+        self.ui.LW_1.clear()
+        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_switch_type.currentText()]["ports"])
 
     def exit_prog(self):
         sys.exit()
