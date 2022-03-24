@@ -76,7 +76,7 @@ class DeviceConfig:
 
     def __init__(self):
         self.name = None
-        self.data={
+        self.data = {
             "name": self.name,
             "device_type": None,
             "device_ref": None,
