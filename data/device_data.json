@@ -7,7 +7,7 @@
           "nb": 24
         },
         {
-          "type": "ge",
+          "type": "ge0/",
           "nb": 2
         }
       ]
@@ -15,11 +15,11 @@
     "Catalyst-2860": {
       "ports": [
         {
-          "type": "fa",
+          "type": "f0/",
           "nb": 24
         },
         {
-          "type": "ge",
+          "type": "g0/",
           "nb": 2
         }
       ]
@@ -29,11 +29,11 @@
     "Cisco-1941 Series": {
       "ports": [
         {
-          "type": "ge",
+          "type": "g1/0/",
           "nb": 2
         },
         {
-          "type": "ge",
+          "type": "g0/",
           "nb": 2
         }
       ]

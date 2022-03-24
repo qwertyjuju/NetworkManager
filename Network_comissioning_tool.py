@@ -41,9 +41,15 @@ class CommissionningTool:
         with open(file,'r',encoding="UTF-8") as f:
             self.data.update(json.load(f))
         for cle in self.data.keys():
-            for cle_2, data in self.data[cle].items():
-                ports=[]
-                i for i in data["ports"]
+            for cle_2 in self.data[cle].keys():
+                for cle_3 in self.data[cle][cle_2].keys():
+                    ports = []
+                    for i in range(len(self.data[cle][cle_2][cle_3])):
+                        print(self.data[cle][cle_2][cle_3][i])
+                        for y in range(int(self.data[cle][cle_2][cle_3][i]["nb"])):
+                            ports.append(self.data[cle][cle_2][cle_3][i]["type"]+str(y))
+                self.data[cle][cle_2]['ports'] =ports
+        print(self.data)
 
     def set_devices(self):
         self.ui.CB_switch_type.clear()
