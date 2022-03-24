@@ -1,6 +1,18 @@
 {
-  "switches": {
-    "catalyst-2960": {
+  "Switch": {
+    "Catalyst-2960": {
+      "ports": [
+        {
+          "type": "fa",
+          "nb": 24
+        },
+        {
+          "type": "ge",
+          "nb": 2
+        }
+      ]
+    },
+    "Catalyst-2860": {
       "ports": [
         {
           "type": "fa",
@@ -13,7 +25,18 @@
       ]
     }
   },
-  "routers": {
-
+  "Router": {
+    "Cisco-1941 Series": {
+      "ports": [
+        {
+          "type": "ge",
+          "nb": 2
+        },
+        {
+          "type": "ge",
+          "nb": 2
+        }
+      ]
+    }
   }
 }

@@ -4,6 +4,7 @@ import logging
 import logging.handlers
 import pathlib
 import serial
+import json
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 from PyQt5 import uic
 
@@ -18,18 +19,36 @@ UI
 
 class CommissionningTool:
     def __init__(self, uifile):
+        self.data = dict()
         self.app = QApplication(sys.argv)
         Ui, Window = uic.loadUiType(uifile)
         self.window = Window()
         self.ui = Ui()
         self.ui.setupUi(self.window)
+        self.init_data("data/device_data.json")
         self.init_ui()
         self.window.show()
         self.app.exec_()
     
     def init_ui(self):
-        pass
-    
+        self.ui.B_exit.clicked.connect(self.exit_prog)
+        self.ui.CB_device_type.currentIndexChanged.connect(self.set_devices)
+        self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.ui.lw_1.addItems(self.data[self.ui.CB_device_type.currentText()])
+        #self.ui.B_create_device.clicked.connect()
+
+    def init_data(self,file):
+        with open(file,'r',encoding="UTF-8") as f:
+            self.data.update(json.load(f))
+
+    def set_devices(self):
+        self.ui.lw_1.clear()
+        self.ui.CB_switch_type.clear()
+        self.ui.lw_1.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.ui.CB_switch_type.addItems(self.data[self.ui.CB_device_type.currentText()])
+
+    def exit_prog(self):
+        sys.exit()
 """
 logger
 """
@@ -119,6 +138,4 @@ class Writer:
         return self._ser.readline()
 
 LOGGER=init_logger()
-wr = Writer("COM1")
-wr.write_commands(commands)
-wr.close()
+ct = CommissionningTool("data/ui/commissioning_tool.ui")
