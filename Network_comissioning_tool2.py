@@ -41,12 +41,11 @@ class CommissionningTool:
         with open(file,'r',encoding="UTF-8") as f:
             self.data.update(json.load(f))
         for cle in self.data.keys():
-            for cle_2 in self.data[cle].keys():
-                for cle_3 in self.data[cle][cle_2].keys():
-                    ports = []
-                    for port in data["ports"]:
-                        ports.extend([port["type"] + str(i) for i in range(port["nb"])])
-                    data["ports"] = ports
+            for cle_2,data in self.data[cle].items():
+                ports = []
+                for port in data["ports"]:
+                    ports.extend([port["type"] + str(i) for i in range(port["nb"])])
+                data["ports"] = ports
         print(self.data)
 
     def set_devices(self):
