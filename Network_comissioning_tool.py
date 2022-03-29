@@ -64,8 +64,8 @@ class CommissionningTool:
             self.deviceconfig.set_name(self.ui.LE_device_name.text())
 
     def update_ports(self):
-        self.ui.LW_1.clear()
-        self.ui.LW_1.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
+        self.ui.LW_ports.clear()
+        self.ui.LW_ports.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
         self.deviceconfig.set_ports(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
 
     def exit_prog(self):
@@ -100,6 +100,10 @@ class DeviceConfig:
         if self.name is not None:
             with open(Path("data/configs").joinpath(self.name+".json"), "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=4)
+            #try:
+            #    self.ui.L_success.setText("SUCCESS")
+            #except Exception as e:
+            #   print(e)
         else:
             log("warning", "config not saved, no name was set.")
 
