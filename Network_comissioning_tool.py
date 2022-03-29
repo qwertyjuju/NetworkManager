@@ -34,6 +34,7 @@ class CommissionningTool:
     
     def init_ui(self):
         self.ui.B_exit.clicked.connect(self.exit_prog)
+        self.ui.B_add_vlans.clicked.connect(self.set_vlan)
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
         self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
@@ -71,6 +72,10 @@ class CommissionningTool:
     def exit_prog(self):
         sys.exit()
 
+    def set_vlan(self):
+        self.ui.LW_vlans.addItem(self.ui.LE_vlans.text() + " - " + self.ui.LE_name_vlan.text())
+        self.deviceconfig.set_vlan(self.ui.LE_vlans.text(),self.ui.LE_name_vlan.text())
+
 
 class DeviceConfig:
 
@@ -80,7 +85,8 @@ class DeviceConfig:
             "name": self.name,
             "device_type": None,
             "device_ref": None,
-            "ports": {}
+            "ports": {},
+            "vlan":{}
         }
 
     def set_ports(self, portlist):
@@ -95,6 +101,9 @@ class DeviceConfig:
     def set_name(self, name):
         self.name = name
         self.data["name"] = self.name
+
+    def set_vlan(self, number, name):
+        self.data["vlan"][number]={"name": name}
 
     def save_json(self):
         if self.name is not None:
