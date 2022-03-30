@@ -35,6 +35,7 @@ class CommissionningTool:
     def init_ui(self):
         self.ui.B_exit.clicked.connect(self.exit_prog)
         self.ui.B_add_vlans.clicked.connect(self.set_vlan)
+        self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
         self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
@@ -75,6 +76,11 @@ class CommissionningTool:
     def set_vlan(self):
         self.ui.LW_vlans.addItem(self.ui.LE_vlans.text() + " - " + self.ui.LE_name_vlan.text())
         self.deviceconfig.set_vlan(self.ui.LE_vlans.text(),self.ui.LE_name_vlan.text())
+
+    def del_vlan(self):
+        for ele in self.ui.LW_vlans.selectedItems():
+            self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
+
 
 
 class DeviceConfig:

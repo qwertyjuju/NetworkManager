@@ -186,6 +186,9 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::MultiSelection</enum>
+    </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
