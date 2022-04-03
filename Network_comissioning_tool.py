@@ -7,14 +7,8 @@ import serial
 import json
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 from PyQt5 import uic
-
-commands=["ena",
-          "conf t",
-          "hostname ju",
-          "enable secret azerty123"
-          ]
 """
-UI
+Commissionning Tool UI
 """
 
 class CommissionningTool:
@@ -74,13 +68,22 @@ class CommissionningTool:
         sys.exit()
 
     def set_vlan(self):
-        self.ui.LW_vlans.addItem(self.ui.LE_vlans.text() + " - " + self.ui.LE_name_vlan.text())
-        self.deviceconfig.set_vlan(self.ui.LE_vlans.text(),self.ui.LE_name_vlan.text())
+        try:
+            self.deviceconfig.set_vlan(self.ui.LE_vlans.text(), self.ui.LE_name_vlan.text())
+        except ValueError:
+            pass
+        else:
+            self.ui.LW_vlans.addItem(self.ui.LE_vlans.text() + " - " + self.ui.LE_name_vlan.text())
+
 
     def del_vlan(self):
         for ele in self.ui.LW_vlans.selectedItems():
             self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
 
+
+"""
+Device Configuration Class
+"""
 
 
 class DeviceConfig:
@@ -109,7 +112,12 @@ class DeviceConfig:
         self.data["name"] = self.name
 
     def set_vlan(self, number, name):
-        self.data["vlan"][number]={"name": name}
+        number = int(number)
+        if number in self.data["vlan"].keys():
+            log("warning","vlan number already exists. Please delete existing one before creating new one.")
+            raise ValueError
+        else:
+            self.data["vlan"][number] = {"name": name}
 
     def save_json(self):
         if self.name is not None:
@@ -126,7 +134,8 @@ class DeviceConfig:
 """
 logger
 """
-        
+
+
 def init_logger():
     """
     creates logger object. The logger has 2 handlers: One handler
@@ -147,6 +156,10 @@ def init_logger():
     logger.addHandler(fh)
     return logger
 
+
+LOGGER = init_logger()
+
+
 def log(logtype, *texts):
     text = " ".join(texts)
     if logtype.lower() == "info":
@@ -158,59 +171,6 @@ def log(logtype, *texts):
     else:
         LOGGER.warning("message type incorrect. Message: " + text)
 
-"""
-Writer
-"""
-class Writer:
-    def __init__(self,port_com):
-        self._ser = serial.Serial(timeout=1)
-        self._ser.baudrate = 9600
-        self._ser.port = port_com
-        self._ser.open()
-        log("info","serial opened")
-        self.initialised = 0
-        while not self.initialised:
-            line = self._ser.readline().decode("utf-8").lower().replace('\r\n',"")
-            self._ser.write(b'\n')
-            log("info", "console output: ", line)
-            if "initial configuration dialog" in line:
-                self.write_command("no")
-            elif line[-1:] in [">", "#"]:
-                self.initialised = 1
-            time.sleep(1)
-
-    def write_command(self, command=None):
-        if command:
-            self._ser.write(str.encode(command+"\n"))
-        else:
-           self._ser.write(str.encode("\n"))
-        
-    def write_commands(self, command):
-        self._ser.write(b'\n')
-        for command in commands:
-            self.write_command(command)
-            time.sleep(1)
-            
-    def print_line(self):
-        print(self._ser.readline())
-        
-    def get_mode(self):
-        pass
-
-    def close(self):
-        """
-        Permet de fermer la connexion entre l'hôte et la machine
-        :return:
-        """
-        self._ser.close()
-
-    def line(self):
-        """
-        Permet d'afficher la dernière ligne. Fonction d'affichage
-        :return: La dernière ligne
-        """
-        return self._ser.readline()
 
 if __name__ == "__main__":
-    LOGGER=init_logger()
     ct = CommissionningTool("data/ui/commissioning_tool.ui")
