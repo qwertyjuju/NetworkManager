@@ -7,14 +7,15 @@ import re
 import serial
 
 
-commands=["ena",
-          "conf t",
-          "hostname ju",
-          "enable secret azerty123"
-          ]
+command_list = ["ena",
+                "conf t",
+                "hostname ju",
+                "enable secret azerty123"
+                ]
 """
 logger
 """
+
 
 def init_logger():
     """
@@ -40,7 +41,7 @@ def init_logger():
 LOGGER = init_logger()
 
 
-def log(logtype, *texts):
+def log(logtype: str, *texts):
     text = " ".join(texts)
     if logtype.lower() == "info":
         LOGGER.info(text)
@@ -67,30 +68,33 @@ SerialInterface
 
 
 class SerialInterface:
-    def __init__(self, port_com):
+    def __init__(self, port_com: str):
         self._ser = serial.Serial(
             baudrate=9600,
             bytesize=serial.EIGHTBITS,
             stopbits=serial.STOPBITS_ONE,
             parity=serial.PARITY_NONE,
+            write_timeout=1,
+            xonxoff=1,
             timeout=1)
         self._ser.port = port_com
+        self.loopnb = 0
         self._ser.open()
         log("info", "serial opened")
         self.initialised = 0
-        last_line = self.write_command(sleeptime=10)
-        print(last_line)
-        regex= re.compile('^(\w+[#>])$')
+        print(self._ser.inWaiting())
+        regex = re.compile("^(\w+[#>])$")
         while not self.initialised:
             last_line = self.write_command()
             if "[yes/no]:" in last_line:
                 self.write_command("no")
-                out = self.write_command(sleeptime=3)
-                print(out)
+                out = self.write_command()
+                print("out", out)
             elif regex.search(last_line) is not None:
                     print("init complete")
                     self.initialised=1
-            print(last_line)
+
+
 
 
         """
@@ -103,28 +107,18 @@ class SerialInterface:
             if line[-1:] in [">", "#"]:
                 self.initialised = 1
         """
-    """
-    def write_command(self, command=None, sleeptime=1):
+    def write_command(self, command: str = None, sleeptime: int = 1):
         out = ""
-        self._ser.reset_input_buffer()
-        if command:
-            self._ser.write(str.encode(command + " \r\n"))
-        else:
-            self._ser.write(str.encode("\r\n"))
+        command = "\r" if not command else command+"\r"
+        self._ser.write(command.encode("utf-8"))
         time.sleep(sleeptime)
         while self._ser.inWaiting()>0:
-            out+= str(self._ser.read(self._ser.inWaiting()).decode("utf-8").lower().replace('\r\n',""))
+            out+= str(self._ser.read(self._ser.inWaiting()).decode("utf-8").lower())
+        print(self.loopnb, repr(out))
+        self.loopnb+=1
         return out
-    """
-    def write_command(self, command=None, sleeptime=1):
-        if command:
-            self._ser.writelines([str.encode(command+"\r\n")])
-        else:
-            self._ser.writelines([str.encode("\r\n")])
-        time.sleep(sleeptime)
-        return self._ser.readline().decode("utf-8").lower().replace('\r\n',"")
 
-    def write_commands(self, commands):
+    def write_commands(self, commands: list):
         for command in commands:
             self.write_command(command)
 

@@ -66,7 +66,23 @@ class CreationTool:
     def create_network (self):
         Network(self.ui.LE_Ipaddr.text())
 
+"""
+Project
+"""
+class Project:
+    def __init__(self, name):
+        self.name=name
+        self.networks={}
 
+    def create_network(self, ipadd, name=None):
+        network = Network(ipadd, name)
+        self.networks[network.name]= network
+        return network
+
+    def create_json(self):
+        json_info = {netname: network.get_info() for netname, network in self.networks.items()}
+        with open(f"{self.name}.json","w") as f:
+            json.dump(json_info, f)
 """
 TODO
 Network creation tool
@@ -210,7 +226,7 @@ class Switch(NetworkDevice):
     def __init__(self, ref, name="Switch",):
         super().__init__()
         self.config = NetworkDevice.device_data["switches"][ref]
-        self.name = name if name is not "Switch" else name+str(Switch._counter)
+        self.name = name if name != "Switch" else name+str(Switch._counter)
         Switch._counter += 1
 
     def add_device(self):
@@ -218,5 +234,7 @@ class Switch(NetworkDevice):
 
 
 if __name__ == "__main__":
-    pass
-    CreationTool(Path("data/ui/creation_tool.ui"))
+    project = Project("SAE21")
+    lan1 = project.create_network("172.16..64/24")
+    project.create_json()
+    #CreationTool(Path("data/ui/creation_tool.ui"))
