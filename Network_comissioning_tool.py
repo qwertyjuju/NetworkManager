@@ -5,7 +5,7 @@ import logging.handlers
 from pathlib import Path
 import serial
 import json
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
 from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
 
@@ -49,6 +49,7 @@ class CommissionningTool:
         self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
         self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
         # exit button
+        self.ui.B_preview_json.clicked.connect(self.preview_config)
         self.ui.B_exit.clicked.connect(self.exit_prog)
 
     def init_data(self, file):
@@ -101,6 +102,10 @@ class CommissionningTool:
     def exit_prog(self):
         sys.exit()
 
+    def preview_config(self):
+        dlg = JsonPreviewDialog(self.window, self.deviceconfig.get_json())
+        dlg.exec()
+
     def set_vlan(self):
         try:
             self.deviceconfig.set_vlan(self.ui.LE_vlannb.text(), self.ui.LE_name_vlan.text())
@@ -112,6 +117,16 @@ class CommissionningTool:
     def del_vlan(self):
         for ele in self.ui.LW_vlans.selectedItems():
             self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
+
+class JsonPreviewDialog(QDialog):
+
+    def __init__(self, parent, jsondata):
+        super().__init__(parent)
+        self.jsondisplay = QTextEdit()
+        self.jsondisplay.setText(jsondata)
+        self.layout = QVBoxLayout()
+        self.layout.addWidget(self.jsondisplay)
+        self.setLayout(self.layout)
 
 
 class LogViewer(logging.Handler):
@@ -179,7 +194,6 @@ class DeviceConfig:
             self.set_port(port, **portconfig)
 
     def set_device_type(self, devicetype):
-        print(devicetype)
         self.data["device_type"] = devicetype
 
     def set_device_ref(self, deviceref):
@@ -196,14 +210,13 @@ class DeviceConfig:
         else:
             self.data["vlan"][number] = {"name": name}
 
+    def get_json(self):
+        return json.dumps(self.data, indent=4)
+
     def save_json(self):
         if self.name is not None:
             with open(Path("data").joinpath("configs", self.name+".json"), "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=4)
-            #try:
-            #    self.ui.L_success.setText("SUCCESS")
-            #except Exception as e:
-            #   print(e)
             log("info", f"config json saved in data/configs/{self.name}.json")
         else:
             log("error", "config not saved, no name was set.")

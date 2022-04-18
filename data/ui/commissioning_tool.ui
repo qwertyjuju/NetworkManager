@@ -19,7 +19,7 @@
   <property name="iconSize">
    <size>
     <width>64</width>
-    <height>128</height>
+    <height>64</height>
    </size>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -117,7 +117,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Port_config_tab">
        <attribute name="title">
@@ -418,6 +418,13 @@
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QPushButton" name="B_preview_json">
+            <property name="text">
+             <string>Preview json file</string>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QPushButton" name="B_create_device">
             <property name="text">

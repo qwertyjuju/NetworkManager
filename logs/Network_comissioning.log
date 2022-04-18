@@ -2948,3 +2948,45 @@
 2022-04-19 00:21:11,124 | Network_comissioning | INFO | config json saved in data/configs/test.json
 2022-04-19 00:21:56,701 | Network_comissioning | ERROR | vlan access value is not int. access vlan for port g1/0/5 not set. 
 2022-04-19 00:22:05,468 | Network_comissioning | ERROR | vlan access value is not int. access vlan for port g1/0/5 not set. 
+2022-04-19 00:24:51,023 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:39:48,411 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:40:04,162 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:40:37,217 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:42:04,842 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:42:44,608 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:43:05,496 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:43:43,839 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:44:20,972 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:44:31,692 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:45:03,830 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:45:44,940 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:47:51,498 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:50:10,264 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
