@@ -70,19 +70,24 @@ class CreationTool:
 Project
 """
 class Project:
-    def __init__(self, name):
-        self.name=name
-        self.networks={}
+    def __init__(self, name, supernet=None):
+        self.name = name
+        self.networks = {}
+        self.ip_supernet = ipaddress.IPv4Interface(supernet).network if supernet is not None else None
 
     def create_network(self, ipadd, name=None):
         network = Network(ipadd, name)
-        self.networks[network.name]= network
+        for net in self.networks.values():
+            if network.overlaps(net):
+                log("error", f"network not created, {str(network.ip)} overlaps other network {str(net.ip)}")
+                return None
+        self.networks[network.name] = network
         return network
 
     def create_json(self):
         json_info = {netname: network.get_info() for netname, network in self.networks.items()}
         with open(f"{self.name}.json","w") as f:
-            json.dump(json_info, f)
+            json.dump(json_info, f, indent=4)
 """
 TODO
 Network creation tool
@@ -99,7 +104,7 @@ class Network:
         try:
             ipaddress.IPv4Interface(args[0])
         except ValueError:
-            log("error", "Network creation: not ip network format, network not created, ip address argument: ", str(args[0]))
+            log("error", f"Network creation: not ip network format, network not created, ip address argument: {str(args[0])}")
             return None
         else:
             return super().__new__(cls)
@@ -118,7 +123,7 @@ class Network:
         self.vlans = {}
         self.nb_vlan = 0
         Network._counter += 1
-        log("info", "network created, ip address:", str(self.ip))
+        log("info", f"network created, ip address: {str(self.ip)}")
 
     def create_subnet(self, ipadd):
         """
@@ -147,7 +152,9 @@ class Network:
             "Subnetworks": {},
             "Devices": {},
             "Vlans": {},
-            "Number of hosts": None
+            "Number of hosts": self.ip.num_addresses,
+            "Broadcast": str(self.ip.broadcast_address),
+            "range": f"{str(list(self.ip.hosts())[0])} - {str(list(self.ip.hosts())[-1])}"
         }
         for subip, subnet in self.subnets.items():
             info["Subnetworks"][subip] = subnet.get_info()
@@ -170,6 +177,9 @@ class Network:
         with open(self.name+".json", "w") as f:
             json.dump(json_info, f)
 
+    def overlaps(self, network):
+        return self.ip.overlaps(network.ip)
+
 
 class Vlan:
 
@@ -186,10 +196,10 @@ class Vlan:
             log("error", "Vlan creation: No Network given as first argument. Vlan not created")
             return None
 
-    def __init__(self, network, ipaddr, name=None):
+    def __init__(self, network: Network, ipadd: str, name=None):
         self.network = network
         self.name = name if name is not None else "VLAN"+str(self.network.nb_vlan)
-        self.ip = ipaddr
+        self.ip = ipaddress.IPv4Interface(ipadd).network
         self.network.nb_vlan += 1
 
     def get_info(self):
@@ -235,6 +245,10 @@ class Switch(NetworkDevice):
 
 if __name__ == "__main__":
     project = Project("SAE21")
-    lan1 = project.create_network("172.16..64/24")
+    lan1 = project.create_network("172.16.104.0/23")
+    lan2 = project.create_network("172.16.64.0/19")
+    lan3 = project.create_network("172.16.0.0/18")
+    lan4 = project.create_network("172.16.96.0/21")
+    #lan5 = project.create_network("172.16.96.2/21")
     project.create_json()
     #CreationTool(Path("data/ui/creation_tool.ui"))
