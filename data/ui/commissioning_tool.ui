@@ -69,6 +69,12 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>MS Sans Serif</family>
@@ -105,7 +111,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Port_config_tab">
        <attribute name="title">
@@ -171,6 +177,38 @@
                </widget>
               </item>
               <item>
+               <widget class="QFrame" name="access_conf_frame">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>access vlan:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="LE_accessvlan">
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
                <widget class="QRadioButton" name="RB_mode_trunk">
                 <property name="text">
                  <string>Trunk</string>
@@ -178,42 +216,70 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_5">
+               <widget class="QFrame" name="trunk_conf_frame">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="label_10">
+                   <property name="text">
+                    <string>allowed Vlans (numbers) :</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="LE_allowedvlans">
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_9">
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>native Vlan</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="LE_nativevlan">
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="B_applyportconf">
+                <property name="maximumSize">
+                 <size>
+                  <width>300</width>
+                  <height>30</height>
+                 </size>
+                </property>
                 <property name="text">
-                 <string>allowed Vlans (numbers) :</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="LE_allowedvlans">
-                <property name="maximumSize">
-                 <size>
-                  <width>300</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="maximumSize">
-                 <size>
-                  <width>300</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>native Vlan</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="LE_nativevlan">
-                <property name="maximumSize">
-                 <size>
-                  <width>300</width>
-                  <height>20</height>
-                 </size>
+                 <string>Apply</string>
                 </property>
                </widget>
               </item>
@@ -247,7 +313,14 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LE_vlannb"/>
+            <widget class="QLineEdit" name="LE_vlannb">
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="label_7">
@@ -257,7 +330,14 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LE_name_vlan"/>
+            <widget class="QLineEdit" name="LE_name_vlan">
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QListWidget" name="LW_vlans">
@@ -280,13 +360,6 @@
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="QPushButton" name="B_apply_vlans">
-             <property name="text">
-              <string>Apply</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </widget>
         </item>
@@ -294,19 +367,13 @@
       </widget>
       <widget class="QWidget" name="Nat_config_tab">
        <attribute name="title">
-        <string>Page</string>
+        <string>NAT configuration</string>
        </attribute>
       </widget>
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_3">
-      <property name="maximumSize">
-       <size>
-        <width>1500</width>
-        <height>700</height>
-       </size>
-      </property>
+     <widget class="QFrame" name="frame_5">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -314,7 +381,7 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
+       <item row="0" column="1">
         <widget class="QPlainTextEdit" name="PTE_log">
          <property name="maximumSize">
           <size>
@@ -324,8 +391,8 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QFrame" name="frame_5">
+       <item row="0" column="2">
+        <widget class="QFrame" name="frame_3">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -337,13 +404,6 @@
            <widget class="QPushButton" name="B_create_device">
             <property name="text">
              <string>Create Device</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="test">
-            <property name="text">
-             <string>test</string>
             </property>
            </widget>
           </item>

@@ -28,16 +28,19 @@ class CommissionningTool:
 
     def init_ui(self):
         self.ui.L_success.hide()
-        self.ui.B_exit.clicked.connect(self.exit_prog)
-        self.ui.B_add_vlans.clicked.connect(self.set_vlan)
-        self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
+        # main configuration
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
         self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
         self.ui.CB_device_ref.activated.connect(self.update_ports)
-        self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
-        self.ui.test.clicked.connect(self.test)
+        # port configuration
         self.update_ports()
+        # vlan configuration
+        self.ui.B_add_vlans.clicked.connect(self.set_vlan)
+        self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
+        self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
+        # exit button
+        self.ui.B_exit.clicked.connect(self.exit_prog)
 
     def init_data(self, file):
         with open(file, 'r', encoding="UTF-8") as f:
@@ -77,9 +80,6 @@ class CommissionningTool:
             pass
         else:
             self.ui.LW_vlans.addItem(self.ui.LE_vlannb.text() + " - " + self.ui.LE_name_vlan.text())
-
-    def test(self):
-        self.ui.frame.hide()
 
     def del_vlan(self):
         for ele in self.ui.LW_vlans.selectedItems():
@@ -143,11 +143,9 @@ class DeviceConfig:
             #    self.ui.L_success.setText("SUCCESS")
             #except Exception as e:
             #   print(e)
+            log("info", f"config json saved in data/configs/{self.name}.json")
         else:
             log("warning", "config not saved, no name was set.")
-
-
-
 """
 logger
 """
