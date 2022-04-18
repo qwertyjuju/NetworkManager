@@ -20,7 +20,7 @@ class CommissionningTool:
             self.window = Window()
             self.ui = Ui()
             self.ui.setupUi(self.window)
-            LOGGER.addHandler(QTextEditLogger(self.ui.PTE_log))
+            LOGGER.addHandler(LogViewer(self.ui.PTE_log))
             self.init_data("data/device_data.json")
             self.init_ui()
             self.window.show()
@@ -86,7 +86,7 @@ class CommissionningTool:
             self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
 
 
-class QTextEditLogger(logging.Handler):
+class LogViewer(logging.Handler):
     def __init__(self, widget):
         super().__init__()
         self.widget = widget
