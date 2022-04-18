@@ -2734,3 +2734,217 @@
 2022-04-18 19:21:55,395 | Network_comissioning | INFO | device data loaded. 
 	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
 	 routeurs: Cisco-1941 Series
+2022-04-18 19:35:02,159 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:36:25,861 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:36:58,345 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:38:29,817 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:39:41,236 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:40:05,651 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:41:44,830 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 19:41:51,214 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 19:41:51,973 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 19:41:52,189 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 19:41:52,390 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 19:42:23,157 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:27:55,017 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:28:10,927 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:11,167 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:11,408 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:11,631 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:11,831 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:12,030 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:12,230 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:12,423 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:13,031 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:13,231 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:13,423 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:13,623 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:13,806 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:14,007 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:14,215 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:16,023 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:16,207 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:16,410 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:16,630 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:28:16,847 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:10,368 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:31:18,158 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:18,351 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:18,542 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:18,744 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:18,944 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:19,151 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:19,350 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:19,871 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:20,078 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:20,295 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:20,527 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:20,751 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:20,966 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:21,286 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:21,518 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:21,735 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:21,951 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:22,167 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:22,391 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:22,598 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:23,407 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:23,615 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:23,815 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:24,023 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:24,230 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:24,455 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:31:24,671 | Network_comissioning | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-18 20:33:22,127 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:33:37,873 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:35:25,159 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:35:36,950 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:42:38,333 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:52:17,234 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:52:32,227 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 20:53:07,746 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 21:00:48,479 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:00:19,616 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:15:49,634 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:18:13,902 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:20:06,792 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:21:24,903 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:22:13,395 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:23:37,704 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:25:53,231 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:26:26,099 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:27:15,271 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:40:59,867 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:41:18,096 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:41:32,929 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:44:24,338 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:44:34,308 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-18 23:44:37,828 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-18 23:44:38,299 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-18 23:48:41,871 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:51:51,571 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:52:15,612 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:52:53,316 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:53:24,671 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:54:01,936 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:54:10,339 | Network_comissioning | WARNING | config not saved, no name was set.
+2022-04-18 23:54:13,723 | Network_comissioning | WARNING | config not saved, no name was set.
+2022-04-18 23:54:35,136 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:54:36,715 | Network_comissioning | ERROR | config not saved, no name was set.
+2022-04-18 23:54:38,155 | Network_comissioning | ERROR | config not saved, no name was set.
+2022-04-18 23:54:46,747 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-18 23:54:53,340 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-18 23:55:46,859 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:57:23,303 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-18 23:57:30,284 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-18 23:57:43,171 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 00:12:38,276 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:15:10,868 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:16:10,696 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:17:53,438 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:18:07,633 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:18:33,132 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 00:18:50,748 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 00:20:13,707 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 00:20:20,932 | Network_comissioning | ERROR | config not saved, no name was set.
+2022-04-19 00:20:28,677 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 00:20:47,245 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 00:21:11,124 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 00:21:56,701 | Network_comissioning | ERROR | vlan access value is not int. access vlan for port g1/0/5 not set. 
+2022-04-19 00:22:05,468 | Network_comissioning | ERROR | vlan access value is not int. access vlan for port g1/0/5 not set. 

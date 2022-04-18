@@ -6,10 +6,13 @@ from pathlib import Path
 import serial
 import json
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
+
 """
 Commissionning Tool UI
 """
+
 
 class CommissionningTool:
     def __init__(self, uifile):
@@ -18,10 +21,11 @@ class CommissionningTool:
             self.app = QApplication(sys.argv)
             Ui, Window = uic.loadUiType(uifile)
             self.window = Window()
+            self.window.setWindowIcon(QIcon(str(Path("data").joinpath("logo.png"))))
             self.ui = Ui()
             self.ui.setupUi(self.window)
             LOGGER.addHandler(LogViewer(self.ui.PTE_log))
-            self.init_data("data/device_data.json")
+            self.init_data(Path("data").joinpath("device_data.json"))
             self.init_ui()
             self.window.show()
             self.app.exec()
@@ -32,8 +36,13 @@ class CommissionningTool:
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
         self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
+        self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
         self.ui.CB_device_ref.activated.connect(self.update_ports)
         # port configuration
+        self.ui.RB_mode_trunk.toggled.connect(self.toggle_portconf)
+        self.ui.RB_mode_access.toggled.connect(self.toggle_portconf)
+        self.ui.B_applyportconf.clicked.connect(self.set_ports)
         self.update_ports()
         # vlan configuration
         self.ui.B_add_vlans.clicked.connect(self.set_vlan)
@@ -59,16 +68,35 @@ class CommissionningTool:
         self.ui.CB_device_ref.clear()
         self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
         self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
+        self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
         self.update_ports()
+
+    def update_ports(self):
+        self.ui.LW_ports.clear()
+        self.ui.LW_ports.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
+        self.deviceconfig.init_ports(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
 
     def update_name(self):
         if self.ui.LE_device_name.text() != "":
             self.deviceconfig.set_name(self.ui.LE_device_name.text())
 
-    def update_ports(self):
-        self.ui.LW_ports.clear()
-        self.ui.LW_ports.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
-        self.deviceconfig.set_ports(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
+    def toggle_portconf(self):
+        if self.ui.RB_mode_access.isChecked():
+            self.ui.access_conf_frame.setEnabled(1)
+            self.ui.trunk_conf_frame.setEnabled(0)
+        if self.ui.RB_mode_trunk.isChecked():
+            self.ui.access_conf_frame.setEnabled(0)
+            self.ui.trunk_conf_frame.setEnabled(1)
+
+    def set_ports(self):
+        config={}
+        if self.ui.RB_mode_access.isChecked():
+            config["port_mode"] = "Access"
+            config["access_vlan"] = self.ui.LE_accessvlan.text()
+        elif self.ui.RB_mode_trunk.isChecked():
+            config["port_mode"] = "Trunk"
+            config["allowed_vlans"] = self.ui.LE_allowedvlans.text()
+        self.deviceconfig.set_ports([item.text() for item in self.ui.LW_ports.selectedItems()], config)
 
     def exit_prog(self):
         sys.exit()
@@ -77,7 +105,7 @@ class CommissionningTool:
         try:
             self.deviceconfig.set_vlan(self.ui.LE_vlannb.text(), self.ui.LE_name_vlan.text())
         except ValueError:
-            pass
+            log("error", "vlan number not integer, vlan not created")
         else:
             self.ui.LW_vlans.addItem(self.ui.LE_vlannb.text() + " - " + self.ui.LE_name_vlan.text())
 
@@ -96,7 +124,18 @@ class LogViewer(logging.Handler):
 
     def emit(self, record):
         msg = self.format(record)
-        self.widget.appendPlainText(msg)
+        if record.levelname == "INFO":
+            self.widget.setTextColor(QColor(33, 184, 2))
+        elif record.levelname == "WARNING":
+            self.widget.setTextColor(QColor(208, 113, 0))
+        elif record.levelname == "ERROR":
+            self.widget.setTextColor(QColor(221, 0, 0))
+        elif record.levelname == "CRITICAL":
+            self.widget.setTextColor(QColor(255, 0, 0))
+        else:
+            self.widget.setTextColor(QColor(0, 0, 0))
+        self.widget.append(msg)
+
 """
 Device Configuration Class
 """
@@ -114,10 +153,33 @@ class DeviceConfig:
             "vlan": {}
         }
 
-    def set_ports(self, portlist):
-        self.data["ports"] = {port: None for port in portlist}
+    def init_ports(self, portlist):
+        self.data["ports"] = {port: {} for port in portlist}
+
+    def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None):
+        self.data["ports"][port] = {
+            "port_mode": port_mode,
+        }
+        if port_mode == "Access":
+            if access_vlan is not None:
+                try:
+                    int(access_vlan)
+                except ValueError:
+                    log("error", f"vlan access value is not int. access vlan for port {port} not set. ")
+                else:
+                     self.data["ports"][port]["access_vlan"]=access_vlan
+        if port_mode == "Trunk":
+            if allowed_vlans is not None:
+                    self.data["ports"][port]["allowed_vlans"]=allowed_vlans
+            else:
+                pass
+
+    def set_ports(self, portlist, portconfig):
+        for port in portlist:
+            self.set_port(port, **portconfig)
 
     def set_device_type(self, devicetype):
+        print(devicetype)
         self.data["device_type"] = devicetype
 
     def set_device_ref(self, deviceref):
@@ -131,13 +193,12 @@ class DeviceConfig:
         number = int(number)
         if number in self.data["vlan"].keys():
             log("warning","vlan number already exists. Please delete existing one before creating new one.")
-            raise ValueError
         else:
             self.data["vlan"][number] = {"name": name}
 
     def save_json(self):
         if self.name is not None:
-            with open(Path("data/configs").joinpath(self.name+".json"), "w", encoding="utf-8") as f:
+            with open(Path("data").joinpath("configs", self.name+".json"), "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=4)
             #try:
             #    self.ui.L_success.setText("SUCCESS")
@@ -145,7 +206,7 @@ class DeviceConfig:
             #   print(e)
             log("info", f"config json saved in data/configs/{self.name}.json")
         else:
-            log("warning", "config not saved, no name was set.")
+            log("error", "config not saved, no name was set.")
 """
 logger
 """
