@@ -4,6 +4,7 @@ import logging
 import logging.handlers
 import time
 import re
+import json
 import serial
 
 
@@ -12,6 +13,16 @@ command_list = ["ena",
                 "hostname ju",
                 "enable secret azerty123"
                 ]
+
+
+commands = {
+    "ports configuration":{
+        "%{forloop(%ports%)}":[
+            "int %()"
+        ],
+    }
+}
+
 """
 logger
 """
@@ -60,6 +71,64 @@ class SerialDisplay:
 
     def add(self):
         pass
+
+"""
+ConfigParser
+"""
+
+
+class ConfigParser:
+    _categories={
+        "name": str,
+        "device_type": str,
+        "device_ref": str,
+        "ports": dict,
+        "vlan": dict,
+    }
+
+    def __init__(self, filename=None):
+        self.data = {}
+        self.commands = []
+        if filename:
+            self.load(filename)
+            self.parse()
+
+    def load(self, filename):
+        file = Path(filename)
+        if file.suffix in [".json"]:
+            data = {}
+            if file.suffix==".json":
+                data.update(self._load_json(file))
+            for categoryname, content in data.items():
+                # noinspection PyTypeHints
+                if categoryname in self._categories.keys() and isinstance(content, self._categories[categoryname]):
+                    self.data[categoryname] = content
+                else:
+                    log("warning", f"{categoryname} category not recognised.")
+
+    @staticmethod
+    def _load_json(file):
+        with open(file, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    def parse(self):
+        commands = [
+            "enable",
+            "configure terminal"
+        ]
+        for vlannb, vlan in self.data["vlan"].items():
+            temp = f'vlan {vlannb}|name {vlan["name"]}|exit'.split("|")
+            if "ip_address" in vlan.keys():
+                temp.extend(f'interface vlan {vlannb}|ip address {vlan["ip_address"]}|exit'.split("|"))
+            commands.extend(temp)
+        for port in self.data["ports"]:
+            pass
+        print(commands)
+
+
+
+
+
 
 
 """

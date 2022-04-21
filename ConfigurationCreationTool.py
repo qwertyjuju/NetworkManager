@@ -10,11 +10,11 @@ from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
 
 """
-Commissionning Tool UI
+Configuration creation tool
 """
 
 
-class CommissionningTool:
+class ConfigTool:
     def __init__(self, uifile):
             self.data = dict()
             self.deviceconfig = DeviceConfig()
@@ -89,14 +89,20 @@ class CommissionningTool:
             self.ui.access_conf_frame.setEnabled(0)
             self.ui.trunk_conf_frame.setEnabled(1)
 
+    def set_vlan(self):
+        res = self.deviceconfig.set_vlan(self.ui.LE_vlannb.text(), self.ui.LE_name_vlan.text())
+        if res is not None:
+            self.ui.LW_vlans.addItem(" - ".join(res))
+
     def set_ports(self):
-        config={}
+        config = {}
         if self.ui.RB_mode_access.isChecked():
             config["port_mode"] = "Access"
             config["access_vlan"] = self.ui.LE_accessvlan.text()
         elif self.ui.RB_mode_trunk.isChecked():
             config["port_mode"] = "Trunk"
             config["allowed_vlans"] = self.ui.LE_allowedvlans.text()
+            config["native_vlan"] = self.ui.LE_nativevlan.text()
         self.deviceconfig.set_ports([item.text() for item in self.ui.LW_ports.selectedItems()], config)
 
     def exit_prog(self):
@@ -106,23 +112,17 @@ class CommissionningTool:
         dlg = JsonPreviewDialog(self.window, self.deviceconfig.get_json())
         dlg.exec()
 
-    def set_vlan(self):
-        try:
-            self.deviceconfig.set_vlan(self.ui.LE_vlannb.text(), self.ui.LE_name_vlan.text())
-        except ValueError:
-            log("error", "vlan number not integer, vlan not created")
-        else:
-            self.ui.LW_vlans.addItem(self.ui.LE_vlannb.text() + " - " + self.ui.LE_name_vlan.text())
-
     def del_vlan(self):
         for ele in self.ui.LW_vlans.selectedItems():
             self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
+
 
 class JsonPreviewDialog(QDialog):
 
     def __init__(self, parent, jsondata):
         super().__init__(parent)
         self.jsondisplay = QTextEdit()
+        self.jsondisplay.setReadOnly(True)
         self.jsondisplay.setText(jsondata)
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.jsondisplay)
@@ -171,23 +171,25 @@ class DeviceConfig:
     def init_ports(self, portlist):
         self.data["ports"] = {port: {} for port in portlist}
 
-    def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None):
-        self.data["ports"][port] = {
-            "port_mode": port_mode,
-        }
-        if port_mode == "Access":
-            if access_vlan is not None:
-                try:
-                    int(access_vlan)
-                except ValueError:
-                    log("error", f"vlan access value is not int. access vlan for port {port} not set. ")
-                else:
-                     self.data["ports"][port]["access_vlan"]=access_vlan
-        if port_mode == "Trunk":
-            if allowed_vlans is not None:
-                    self.data["ports"][port]["allowed_vlans"]=allowed_vlans
-            else:
-                pass
+    def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None, native_vlan=None):
+        if port_mode is not None and port_mode.lower() in ["access", "trunk"]:
+            if port_mode.lower() == "access":
+                if access_vlan is not None or "":
+                    try:
+                        int(access_vlan)
+                    except ValueError:
+                        log("warning", f"vlan access value is not int. access vlan for port {port} not set. ")
+                    else:
+                        self.data["ports"][port]["port_mode"] = port_mode
+                        self.data["ports"][port]["access_vlan"] = access_vlan
+            if port_mode.lower() == "trunk":
+                if allowed_vlans is not None or "":
+                    self.data["ports"][port]["port_mode"] = port_mode
+                    self.data["ports"][port]["allowed_vlans"] = allowed_vlans
+                    if native_vlan is not None or "":
+                        self.data["ports"][port]["native_vlan"] = native_vlan
+                    else:
+                        log("warning", "no native vlan set.")
 
     def set_ports(self, portlist, portconfig):
         for port in portlist:
@@ -204,11 +206,18 @@ class DeviceConfig:
         self.data["name"] = self.name
 
     def set_vlan(self, number, name):
-        number = int(number)
-        if number in self.data["vlan"].keys():
-            log("warning","vlan number already exists. Please delete existing one before creating new one.")
+        try:
+            number = int(number)
+        except ValueError:
+            log("error", "vlan number not integer, vlan not created")
+            return None
         else:
-            self.data["vlan"][number] = {"name": name}
+            if number in self.data["vlan"].keys():
+                log("warning","vlan number already exists. Please delete existing one before creating new one.")
+                return None
+            else:
+                self.data["vlan"][number] = {"name": name}
+                return number, name
 
     def get_json(self):
         return json.dumps(self.data, indent=4)
@@ -262,4 +271,4 @@ def log(logtype, *texts):
 
 
 if __name__ == "__main__":
-    ct = CommissionningTool("data/ui/commissioning_tool.ui")
+    ct = ConfigTool("data/ui/commissioning_tool.ui")

@@ -2990,3 +2990,39 @@
 2022-04-19 00:50:10,264 | Network_comissioning | INFO | device data loaded. 
 	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
 	 routeurs: Cisco-1941 Series
+2022-04-19 11:24:55,275 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 11:25:19,324 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 11:30:38,970 | Network_comissioning | ERROR | config not saved, no name was set.
+2022-04-19 11:30:39,507 | Network_comissioning | ERROR | config not saved, no name was set.
+2022-04-19 11:36:20,840 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 11:39:42,582 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 11:39:58,923 | Network_comissioning | ERROR | vlan access value is not int. access vlan for port g1/0/0 not set. 
+2022-04-19 11:40:01,532 | Network_comissioning | ERROR | vlan access value is not int. access vlan for port g1/0/0 not set. 
+2022-04-19 12:27:04,155 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 12:27:18,476 | Network_comissioning | WARNING | vlan access value is not int. access vlan for port g1/0/1 not set. 
+2022-04-19 12:27:18,478 | Network_comissioning | WARNING | vlan access value is not int. access vlan for port g1/0/5 not set. 
+2022-04-19 12:27:18,478 | Network_comissioning | WARNING | vlan access value is not int. access vlan for port g1/0/4 not set. 
+2022-04-19 12:27:18,479 | Network_comissioning | WARNING | vlan access value is not int. access vlan for port g1/0/3 not set. 
+2022-04-19 12:27:18,480 | Network_comissioning | WARNING | vlan access value is not int. access vlan for port g1/0/2 not set. 
+2022-04-19 14:10:28,021 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-19 14:11:30,263 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 14:12:06,655 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 14:12:21,935 | Network_comissioning | INFO | config json saved in data/configs/test.json
+2022-04-19 14:41:34,592 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-20 16:37:02,412 | Network_comissioning | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
