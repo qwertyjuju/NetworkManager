@@ -34,7 +34,7 @@ def init_logger():
     for showing logs in terminal and one handler for saving logs
     in file.
     """
-    logger = logging.getLogger('Network_comissioning')
+    logger = logging.getLogger('Device_configuration')
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
     sh = logging.StreamHandler()
@@ -90,15 +90,16 @@ class ConfigParser:
         self.data = {}
         self.commands = []
         if filename:
+            self.file = Path(filename)
             self.load(filename)
             self.parse()
+            self.create_txt()
 
     def load(self, filename):
-        file = Path(filename)
-        if file.suffix in [".json"]:
+        if self.file.suffix in [".json"]:
             data = {}
-            if file.suffix==".json":
-                data.update(self._load_json(file))
+            if self.file.suffix==".json":
+                data.update(self._load_json(self.file))
             for categoryname, content in data.items():
                 # noinspection PyTypeHints
                 if categoryname in self._categories.keys() and isinstance(content, self._categories[categoryname]):
@@ -116,20 +117,27 @@ class ConfigParser:
             "enable",
             "configure terminal"
         ]
+        # vlan commands creation
         for vlannb, vlan in self.data["vlan"].items():
             temp = f'vlan {vlannb}|name {vlan["name"]}|exit'.split("|")
             if "ip_address" in vlan.keys():
                 temp.extend(f'interface vlan {vlannb}|ip address {vlan["ip_address"]}|exit'.split("|"))
             commands.extend(temp)
-        for port in self.data["ports"]:
-            pass
+        # port commands creation
+        for portname, port in self.data["ports"].items():
+            try:
+                port["port_mode"]
+            except KeyError:
+                pass
+            else:
+                if port["port_mode"].lower() == "trunk":
+                    commands.extend(f'interface {portname}|switchport mode trunk|switchport trunk allowed vlan {port["allowed_vlans"]}|switchport trunk native {port["native_vlan"]}'.split("|"))
+        self.commands = commands
         print(commands)
 
-
-
-
-
-
+    def create_txt(self):
+        with open(f"{self.file.stem}.txt","w", encoding="utf-8") as f:
+            f.writelines([i+"\n" for i in self.commands])
 
 """
 SerialInterface

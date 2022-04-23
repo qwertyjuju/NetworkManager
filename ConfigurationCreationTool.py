@@ -1,9 +1,8 @@
 import sys
-import time
 import logging
 import logging.handlers
 from pathlib import Path
-import serial
+import ipaddress
 import json
 from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
 from PyQt5.QtGui import QColor, QIcon
@@ -48,6 +47,8 @@ class ConfigTool:
         self.ui.B_add_vlans.clicked.connect(self.set_vlan)
         self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
         self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
+        # RIP configuration
+        self.ui.GB_rip.toggled.connect(self.test)
         # exit button
         self.ui.B_preview_json.clicked.connect(self.preview_config)
         self.ui.B_exit.clicked.connect(self.exit_prog)
@@ -116,6 +117,9 @@ class ConfigTool:
         for ele in self.ui.LW_vlans.selectedItems():
             self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
 
+    def test(self):
+        print("test")
+
 
 class JsonPreviewDialog(QDialog):
 
@@ -134,7 +138,7 @@ class LogViewer(logging.Handler):
         super().__init__()
         self.widget = widget
         self.widget.setReadOnly(True)
-        formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
+        formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
         self.setFormatter(formatter)
 
     def emit(self, record):
