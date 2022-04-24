@@ -1,7 +1,5 @@
 import multiprocessing as proc
 from pathlib import Path
-import logging
-import logging.handlers
 import time
 import re
 import json
@@ -28,40 +26,7 @@ logger
 """
 
 
-def init_logger():
-    """
-    creates logger object. The logger has 2 handlers: One handler
-    for showing logs in terminal and one handler for saving logs
-    in file.
-    """
-    logger = logging.getLogger('Device_configuration')
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.DEBUG)
-    sh.setFormatter(formatter)
-    logger.addHandler(sh)
-    fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Device_configuration.log"),
-                                              maxBytes=1048576, backupCount=5, encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-    return logger
 
-
-LOGGER = init_logger()
-
-
-def log(logtype: str, *texts):
-    text = " ".join(texts)
-    if logtype.lower() == "info":
-        LOGGER.info(text)
-    elif logtype.lower() == "warning":
-        LOGGER.warning(text)
-    elif logtype.lower() == "error":
-        LOGGER.error(text)
-    else:
-        LOGGER.warning("message type incorrect. Message: " + text)
 
 
 class SerialDisplay:
