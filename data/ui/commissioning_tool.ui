@@ -45,16 +45,6 @@
          <property name="editable">
           <bool>false</bool>
          </property>
-         <item>
-          <property name="text">
-           <string>Switch</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Router</string>
-          </property>
-         </item>
         </widget>
        </item>
        <item row="2" column="0">
@@ -123,7 +113,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Port_config_tab">
        <attribute name="title">
@@ -717,7 +707,7 @@
            <bool>true</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_8">
            <item row="0" column="0">

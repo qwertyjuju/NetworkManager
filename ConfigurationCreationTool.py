@@ -14,8 +14,6 @@ Configuration creation tool
 
 class ConfigTool:
     def __init__(self, uifile):
-            self.data = dict()
-            self.deviceconfig = DeviceConfig()
             self.app = QApplication(sys.argv)
             Ui, Window = uic.loadUiType(uifile)
             self.window = Window()
@@ -23,7 +21,8 @@ class ConfigTool:
             self.ui = Ui()
             self.ui.setupUi(self.window)
             get_logger().set_logviewer(self.ui.PTE_log)
-            self.init_data(Path("data").joinpath("device_data.json"))
+            DeviceConfig.init_class(Path("data").joinpath("device_data.json"))
+            self.deviceconfig = DeviceConfig()
             self.init_ui()
             self.window.show()
             self.app.exec()
@@ -32,11 +31,12 @@ class ConfigTool:
         self.ui.L_success.hide()
         # main configuration
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
-        self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
-        self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
-        self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
-        self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
-        self.ui.CB_device_ref.activated.connect(self.update_ports)
+        self.ui.CB_device_type.addItems(self.deviceconfig.get_device_types())
+        self.deviceconfig.device_type = self.ui.CB_device_type.currentText()
+        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.device_type))
+        self.deviceconfig.device_ref = self.ui.CB_device_ref.currentText()
+        self.ui.CB_device_type.currentIndexChanged.connect(self.update_device_type)
+        self.ui.CB_device_ref.currentIndexChanged.connect(self.update_device_ref)
         # port configuration
         self.ui.RB_mode_trunk.toggled.connect(self.toggle_portconf)
         self.ui.RB_mode_access.toggled.connect(self.toggle_portconf)
@@ -52,34 +52,23 @@ class ConfigTool:
         self.ui.B_preview_json.clicked.connect(self.preview_config)
         self.ui.B_exit.clicked.connect(self.exit_prog)
 
-    def init_data(self, file):
-        with open(file, 'r', encoding="UTF-8") as f:
-            self.data.update(json.load(f))
-        for cle in self.data.keys():
-            for cle_2, data in self.data[cle].items():
-                ports = []
-                for port in data["ports"]:
-                    ports.extend([port["type"] + str(i) for i in range(port["nb"])])
-                data["ports"] = ports
-        log("info", 'device data loaded.',
-                    f'\n\t switches: {" - ".join(self.data["Switch"].keys())} ;',
-                    f'\n\t routeurs: {" - ".join(self.data["Router"].keys())}')
-
-    def update_devices(self):
+    def update_device_type(self):
+        self.deviceconfig.device_type = self.ui.CB_device_type.currentText()
         self.ui.CB_device_ref.clear()
-        self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
-        self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
-        self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
-        self.update_ports()
+        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.device_type))
+
+    def update_device_ref(self):
+        if self.ui.CB_device_ref.currentText() != "":
+            self.deviceconfig.device_ref = self.ui.CB_device_ref.currentText()
+            self.update_ports()
 
     def update_ports(self):
         self.ui.LW_ports.clear()
-        self.ui.LW_ports.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
-        self.deviceconfig.init_ports(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
+        self.ui.LW_ports.addItems(self.deviceconfig.get_portsname())
 
     def update_name(self):
         if self.ui.LE_device_name.text() != "":
-            self.deviceconfig.set_name(self.ui.LE_device_name.text())
+            self.deviceconfig.name = self.ui.LE_device_name.text()
 
     def toggle_portconf(self):
         if self.ui.RB_mode_access.isChecked():

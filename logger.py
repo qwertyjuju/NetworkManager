@@ -3,6 +3,7 @@ import logging.handlers
 from PyQt5.QtGui import QColor
 from pathlib import Path
 
+
 class Logger:
     logger = None
 
@@ -43,6 +44,7 @@ class Logger:
     def set_logviewer(self, widget):
         self._logger.addHandler(LogViewer(widget))
 
+
 class LogViewer(logging.Handler):
     def __init__(self, widget):
         super().__init__()
@@ -72,7 +74,6 @@ def get_logger():
 
 if Logger.logger is None:
     Logger()
-
 log = Logger.logger.log
 
 

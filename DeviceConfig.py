@@ -1,3 +1,4 @@
+import ipaddress
 from pathlib import Path
 import json
 from logger import log
@@ -8,21 +9,61 @@ Device Configuration Class
 
 
 class DeviceConfig:
+    _device_data = None
+
+    @classmethod
+    def init_class(cls, file):
+        """
+        function to call before creation of a device configuration
+        :param file:
+        :return:
+        """
+        cls._device_data={}
+        with open(file, 'r', encoding="UTF-8") as f:
+            cls._device_data.update(json.load(f))
+        for cle in cls._device_data.keys():
+            for cle_2, data in cls._device_data[cle].items():
+                ports = []
+                for port in data["ports"]:
+                    ports.extend([port["type"] + str(i) for i in range(port["nb"])])
+                data["ports"] = ports
+        log("info", 'device data loaded.',
+                    f'\n\t switches: {" - ".join(cls._device_data["Switch"].keys())} ;',
+                    f'\n\t routeurs: {" - ".join(cls._device_data["Router"].keys())}')
+
+    @classmethod
+    def get_device_types(cls):
+        return cls._device_data.keys()
+
+    @classmethod
+    def get_device_refs(cls, device_type):
+        if device_type in cls._device_data.keys():
+            return [i for i in cls._device_data[device_type]]
+
+    def __new__(cls):
+        if cls._device_data is None:
+            log("warning", "no device data loaded. please use init_class() to pass device data info (json format)")
+            return None
+        else:
+            return super().__new__(cls)
 
     def __init__(self):
-        self.name = None
         self.data = {
-            "name": self.name,
+            "name": None,
             "device_type": None,
             "device_ref": None,
             "ports": {},
             "vlan": {}
         }
+        self._name = self.data["name"]
+        self._device_type = self.data["device_type"]
+        self._device_ref = self.data["device_ref"]
 
-    def init_ports(self, portlist):
-        self.data["ports"] = {port: {} for port in portlist}
+    def _init_ports(self):
+        if self.device_type is not None and self.device_ref is not None:
+            self.data["ports"] = {portname: {} for portname in self._device_data[self.device_type][self.device_ref]["ports"]}
 
-    def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None, native_vlan=None):
+    def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None, native_vlan=None, ipadd=None):
         if port_mode is not None and port_mode.lower() in ["access", "trunk"]:
             if port_mode.lower() == "access":
                 if access_vlan is not None or "":
@@ -41,22 +82,96 @@ class DeviceConfig:
                         self.data["ports"][port]["native_vlan"] = native_vlan
                     else:
                         log("warning", "no native vlan set.")
+        if ipadd:
+            try:
+                ipaddress.IPv4Address(ipadd)
+            except ValueError:
+                log("warning", f"ip address: {ipadd} not set. Ip address not valid")
+            else:
+                self.data["ports"][port]["ip_address"] = ipaddress
+        log("info", f"{port} port set with attributes: {self.data['ports'][port]}")
 
     def set_ports(self, portlist, portconfig):
         for port in portlist:
             self.set_port(port, **portconfig)
 
-    def set_device_type(self, devicetype):
-        self.data["device_type"] = devicetype
+    def get_portsname(self):
+        return self.data["ports"].keys()
 
-    def set_device_ref(self, deviceref):
-        self.data["device_ref"] = deviceref
+    @property
+    def device_type(self):
+        """
+        device type property
+        :return:
+        """
+        return self._device_type
 
-    def set_name(self, name):
-        self.name = name
-        self.data["name"] = self.name
+    @device_type.setter
+    def device_type(self, devicetype):
+        """
+        device type setter. if devicetype is not in the device data dictionnary, a ValueError Exception will be raised
+        :param devicetype:
+        :return:
+        """
+        if (isinstance(devicetype, str) and devicetype in self._device_data.keys()) or devicetype is None:
+            if self.device_type == devicetype:
+                pass
+            else:
+                self._device_type, self.data["device_type"] = devicetype, devicetype
+                self.device_ref = None
+        else:
+            raise ValueError
+
+    @property
+    def device_ref(self):
+        """
+        device ref property
+        :return:
+        """
+        return self._device_ref
+
+    @device_ref.setter
+    def device_ref(self, deviceref):
+        """
+        device ref setter. If deviceref is not in the device data dictionary for the actual device type, a ValueError Exception
+        will be raised
+        :param deviceref:
+        :return:
+        """
+        if (isinstance(deviceref, str) and deviceref in self._device_data[self.device_type].keys()) or deviceref is None:
+            self._device_ref, self.data["device_ref"] = deviceref, deviceref
+            self._init_ports()
+        else:
+            log("error", f"device reference value not recognised, deviceref value: {deviceref}")
+            raise ValueError
+
+    @property
+    def name(self):
+        """
+        name property
+        :return:
+        """
+        return self._name
+
+    @name.setter
+    def name(self, device_name):
+        """
+        name setter
+        :param device_name:
+        :return:
+        """
+        if isinstance(device_name, str) or device_name is None:
+            self._name = device_name
+        else:
+            raise ValueError
 
     def set_vlan(self, number, name):
+        """
+        set a vlan with name, ip adress
+        :param number:
+        :param name:
+        :return:
+        """
         try:
             number = int(number)
         except ValueError:
@@ -71,6 +186,10 @@ class DeviceConfig:
                 return number, name
 
     def get_json(self):
+        """
+        returns data in json format
+        :return:
+        """
         return json.dumps(self.data, indent=4)
 
     def create_commands(self):
