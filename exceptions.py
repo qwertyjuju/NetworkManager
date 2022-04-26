@@ -7,3 +7,6 @@ class MainException(Exception):
 
 class CCTException(MainException):
     pass
+
+class DataError(CCTException):
+    pass

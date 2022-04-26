@@ -32,9 +32,9 @@ class ConfigTool:
         # main configuration
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
         self.ui.CB_device_type.addItems(self.deviceconfig.get_device_types())
-        self.deviceconfig.device_type = self.ui.CB_device_type.currentText()
-        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.device_type))
-        self.deviceconfig.device_ref = self.ui.CB_device_ref.currentText()
+        self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
+        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.get_device_type()))
+        self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
         self.ui.CB_device_type.currentIndexChanged.connect(self.update_device_type)
         self.ui.CB_device_ref.currentIndexChanged.connect(self.update_device_ref)
         # port configuration
@@ -47,19 +47,19 @@ class ConfigTool:
         self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
         self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
         # RIP configuration
-        self.ui.GB_rip.toggled.connect(self.test)
+        self.ui.GB_rip.toggled.connect(self.toggle_rip)
         # exit button
         self.ui.B_preview_json.clicked.connect(self.preview_config)
         self.ui.B_exit.clicked.connect(self.exit_prog)
 
     def update_device_type(self):
-        self.deviceconfig.device_type = self.ui.CB_device_type.currentText()
+        self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
         self.ui.CB_device_ref.clear()
-        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.device_type))
+        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.get_device_type()))
 
     def update_device_ref(self):
         if self.ui.CB_device_ref.currentText() != "":
-            self.deviceconfig.device_ref = self.ui.CB_device_ref.currentText()
+            self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
             self.update_ports()
 
     def update_ports(self):
@@ -68,7 +68,7 @@ class ConfigTool:
 
     def update_name(self):
         if self.ui.LE_device_name.text() != "":
-            self.deviceconfig.name = self.ui.LE_device_name.text()
+            self.deviceconfig.set_name(self.ui.LE_device_name.text())
 
     def toggle_portconf(self):
         if self.ui.RB_mode_access.isChecked():
@@ -77,6 +77,10 @@ class ConfigTool:
         if self.ui.RB_mode_trunk.isChecked():
             self.ui.access_conf_frame.setEnabled(0)
             self.ui.trunk_conf_frame.setEnabled(1)
+
+    def toggle_rip(self):
+        if self.ui.GB_rip.isChecked():
+            self.deviceconfig.set_rip(None)
 
     def set_vlan(self):
         res = self.deviceconfig.set_vlan(self.ui.LE_vlannb.text(), self.ui.LE_name_vlan.text())
@@ -92,6 +96,8 @@ class ConfigTool:
             config["port_mode"] = "Trunk"
             config["allowed_vlans"] = self.ui.LE_allowedvlans.text()
             config["native_vlan"] = self.ui.LE_nativevlan.text()
+        if self.ui.LE_portipadd.text() != "":
+            config["ipadd"] = self.ui.LE_portipadd.text()
         self.deviceconfig.set_ports([item.text() for item in self.ui.LW_ports.selectedItems()], config)
 
     def exit_prog(self):
