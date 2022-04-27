@@ -1,9 +1,12 @@
 import ipaddress
 from pathlib import Path
 import json
+import pickle
 from copy import deepcopy
 from logger import log
 from exceptions import *
+
+
 
 """
 Device Configuration Class
@@ -63,7 +66,13 @@ class DeviceConfig:
         """
         info = self.get_device_type(), self.get_device_ref()
         if info[0] is not None and info[1] is not None:
-            self._data["ports"] = {portname: {} for portname in self._device_data[info[0]][info[1]]["ports"]}
+            self._data["ports"] = {portname: {
+                "port_mode": None,
+                "access_vlan": None,
+                "allowed_vlans": None,
+                "native_vlan": None,
+                "ip_address": None
+            } for portname in self._device_data[info[0]][info[1]]["ports"]}
 
     def load(self, filename):
         """
@@ -101,7 +110,7 @@ class DeviceConfig:
     def create_txt(self):
         pass
 
-    def set_vlan(self, number, name):
+    def set_vlan(self, number, name=None, ipadd=None):
         """
         set a vlan with name, ip adress
         :param number:
@@ -119,9 +128,13 @@ class DeviceConfig:
                 return None
             else:
                 self._data["vlan"][number] = {
-                    "name": name
+                    "name": name,
+                    "ip_address": ipadd
                 }
-                return number, name
+                return number, name, ipadd
+
+    def del_vlan(self, number):
+        del self._data["vlan"][number]
 
     def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None, native_vlan=None, ipadd=None):
         """
@@ -236,6 +249,24 @@ class DeviceConfig:
         else:
             self._data["rip"] = {}
 
+    def add_rip_network(self, ipadd):
+        try:
+            ipaddress.IPv4Address(ipadd)
+        except ValueError:
+            log("error", "IPadress not in ip format.")
+            return None
+        else:
+            if self._data["rip"]:
+                if ipadd not in self._data["rip"]["networks"]:
+                    self._data["rip"]["networks"] = ipadd
+                    return ipadd
+                else:
+                    log("warning", "network address already in list")
+                    return None
+            else:
+                log("error", "RIP is not enabled")
+                return None
+
     def get_json(self):
         """
         returns data in json format
@@ -248,6 +279,9 @@ class DeviceConfig:
             "enable",
             "configure terminal"
         ]
+        #
+        if self._data["name"]:
+            commands.extend(f"hostname {self._data['name']}")
         # vlan commands creation
         for vlannb, vlan in self._data["vlan"].items():
             temp = f'vlan {vlannb}|name {vlan["name"]}|exit'.split("|")
@@ -256,18 +290,53 @@ class DeviceConfig:
             commands.extend(temp)
         # port commands creation
         for portname, port in self._data["ports"].items():
-            if port:
+            if port["port_mode"]:
+                if port["port_mode"].lower() == "access":
+                    commands.extend(f'interface {portname}|switchport mode access|switchport access vlan {port["access_vlan"]}'.split("|"))
                 if port["port_mode"].lower() == "trunk":
                     commands.extend(f'interface {portname}|switchport mode trunk|switchport trunk allowed vlan {port["allowed_vlans"]}|switchport trunk native {port["native_vlan"]}'.split("|"))
+                commands.extend("exit")
         self.commands = commands
 
-    def save_json(self):
-        if self.name is not None:
-            with open(Path("data").joinpath("configs", self.name+".json"), "w", encoding="utf-8") as f:
-                json.dump(self._data, f, indent=4)
-            log("info", f"config json saved in data/configs/{self.name}.json")
+    def save_all(self):
+        if self._data["name"]:
+            directory = Path(f"{self._data['name']}")
+            if not directory.exists():
+                directory.mkdir()
+            self.save_json(directory)
+            self.create_commands()
+            self.save_cmdl(directory)
         else:
             log("error", "config not saved, no name was set.")
+
+    def save_json(self, directory=None):
+        if not directory:
+            path = Path(f"{self._data['name']}.json")
+        else:
+            path = Path(directory).joinpath(f"{self._data['name']}.json")
+            print(path)
+        if self._data["name"]:
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(self._data, f, indent=4)
+            log("info", f"config json saved in {path}")
+        else:
+            log("error", "config not saved, no name was set.")
+
+    def save_cmdl(self, directory=None):
+        if not directory:
+            path = Path(f"{self._data['name']}.cmdl")
+        else:
+            path = Path(directory).joinpath(f"{self._data['name']}.cmdl")
+        if self._data["name"]:
+            if self.commands:
+                with open(path, "wb") as f:
+                    pickle.dump(self.commands,f)
+                    log("info", f"command lines file saved in {path}")
+            else:
+                log("warning", "cmdl not created, no commands were created. Please call \"create_commands()\" method")
+        else:
+            log("error", "config not saved, no name was set.")
+
 
     @classmethod
     def init_class(cls, file):
@@ -302,4 +371,6 @@ class DeviceConfig:
     def get_device_data(cls):
         return cls._device_data
 
-
+    @classmethod
+    def get_categories(cls):
+        return cls._categories

@@ -113,7 +113,13 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
       </property>
       <widget class="QWidget" name="Port_config_tab">
        <attribute name="title">
@@ -150,7 +156,7 @@
               <item>
                <widget class="QLabel" name="label_12">
                 <property name="text">
-                 <string>port IP address:</string>
+                 <string>port IP address (aaa.bbb.ccc.ddd/CIDR):</string>
                 </property>
                </widget>
               </item>
@@ -198,7 +204,7 @@
                     <bool>false</bool>
                    </property>
                    <property name="autoExclusive">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -240,7 +246,7 @@
                     <string>Trunk</string>
                    </property>
                    <property name="autoExclusive">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -935,6 +941,24 @@
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QWidget" name="Other_conf_tab">
+       <attribute name="title">
+        <string>Other configurations</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>120</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>

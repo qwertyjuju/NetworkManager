@@ -1,0 +1,181 @@
+2022-04-26 23:30:20,317 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-26 23:47:45,464 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:16:40,901 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:19:41,237 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:32:24,552 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:32:58,540 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:33:46,511 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:34:40,626 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:35:00,097 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:35:14,930 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:36:10,889 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:40:08,336 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:40:19,029 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:42:28,201 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:42:33,523 | logs | ERROR | vlan number not integer, vlan not created
+2022-04-27 10:45:20,034 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:46:10,352 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:46:18,962 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:46:19,507 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:46:19,746 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:46:25,938 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:46:44,426 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:46:47,242 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:46:47,466 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 10:50:25,082 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:50:54,272 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:51:30,862 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:52:27,641 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:52:54,300 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:53:11,897 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:55:37,393 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:55:58,545 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 10:56:28,078 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 11:02:00,725 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 15:40:37,044 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:32:53,540 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:33:08,238 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:33:39,698 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:41:25,960 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:42:44,652 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:46:04,281 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:46:16,787 | logs | ERROR | IPadress not in ip format.
+2022-04-27 23:46:17,923 | logs | ERROR | IPadress not in ip format.
+2022-04-27 23:46:30,562 | logs | WARNING | network address already in list
+2022-04-27 23:46:31,226 | logs | WARNING | network address already in list
+2022-04-27 23:46:31,418 | logs | WARNING | network address already in list
+2022-04-27 23:46:31,626 | logs | WARNING | network address already in list
+2022-04-27 23:46:43,402 | logs | WARNING | network address already in list
+2022-04-27 23:46:43,891 | logs | WARNING | network address already in list
+2022-04-27 23:46:44,083 | logs | WARNING | network address already in list
+2022-04-27 23:47:23,309 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:48:17,571 | logs | ERROR | vlan number not integer, vlan not created
+2022-04-27 23:48:19,091 | logs | ERROR | vlan number not integer, vlan not created
+2022-04-27 23:48:30,626 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 23:48:31,842 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 23:48:32,058 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 23:48:32,274 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-04-27 23:48:57,895 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:49:34,437 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-27 23:55:44,883 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:35:52,052 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:35:52,053 | logs | ERROR | config not saved, no name was set.
+2022-04-28 00:36:02,306 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:36:10,501 | logs | INFO | config json saved in data/configs/test.json
+2022-04-28 00:38:36,811 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:38:41,294 | logs | INFO | config json saved in data/configs/aaa.json
+2022-04-28 00:39:15,972 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:40:25,333 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:40:28,396 | logs | ERROR | config not saved, no name was set.
+2022-04-28 00:41:20,888 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:41:25,606 | logs | INFO | config json saved in data/configs/aaaa.json
+2022-04-28 00:44:50,080 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:44:56,207 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:45:00,429 | logs | INFO | config json saved in data/configs/dddddddddd.json
+2022-04-28 00:46:43,262 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:46:48,293 | logs | INFO | config json saved in data/configs/aaa.json
+2022-04-28 00:47:40,921 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:47:43,747 | logs | ERROR | config not saved, no name was set.
+2022-04-28 00:47:48,045 | logs | INFO | config json saved in data/configs/aaaa.json
+2022-04-28 00:47:52,484 | logs | INFO | config json saved in data/configs/aaaa.json
+2022-04-28 00:49:26,250 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-04-28 00:49:30,254 | logs | INFO | config json saved in aaaaa\aaaaa.json
+2022-04-28 00:49:30,256 | logs | INFO | command lines file saved in aaaaa\aaaaa.cmdl
+2022-04-28 00:49:35,141 | logs | INFO | config json saved in aaaaa\aaaaa.json
+2022-04-28 00:49:35,142 | logs | INFO | command lines file saved in aaaaa\aaaaa.cmdl

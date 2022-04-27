@@ -19,7 +19,7 @@ class Logger:
         sh.setLevel(logging.DEBUG)
         sh.setFormatter(formatter)
         self._logger.addHandler(sh)
-        fh = logging.handlers.RotatingFileHandler(filename=Path("logs").joinpath(f"{name}"),
+        fh = logging.handlers.RotatingFileHandler(filename=Path("logs").joinpath(f"{name}.log"),
                                                   maxBytes=1048576, backupCount=5, encoding="utf-8")
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
@@ -28,7 +28,7 @@ class Logger:
 
     @classmethod
     def init_logger(cls, logger):
-        cls.logger= logger
+        cls.logger = logger
 
     def log(self, logtype: str, *texts):
         text = " ".join(texts)
