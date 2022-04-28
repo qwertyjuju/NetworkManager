@@ -6,43 +6,7 @@ import ipaddress
 from pathlib import Path
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 from PyQt5 import uic
-
-
-"""
-Logger
-"""
-"""
-creates logger object. The logger has 2 handlers: One handler
-for showing logs in terminal and one handler for saving logs
-in file.
-"""
-
-LOGGER = logging.getLogger('Network_creation_tool')
-LOGGER.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
-sh = logging.StreamHandler()
-sh.setLevel(logging.DEBUG)
-sh.setFormatter(formatter)
-LOGGER.addHandler(sh)
-fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Network_creation.log"),
-                                          maxBytes=1048576, backupCount=5, encoding="utf-8")
-fh.setLevel(logging.DEBUG)
-fh.setFormatter(formatter)
-LOGGER.addHandler(fh)
-
-
-def log(logtype, *texts):
-    text = " ".join(texts)
-    if logtype.lower() == "info":
-        LOGGER.info(text)
-    elif logtype.lower() == "warning":
-        LOGGER.warning(text)
-    elif logtype.lower() == "error":
-        LOGGER.error(text)
-    else:
-        LOGGER.warning("message type incorrect. Message: " + text)
-
-
+from logger import log
 """
 TODO
 UI part

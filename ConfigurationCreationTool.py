@@ -1,12 +1,15 @@
 import sys
-import logging
-import logging.handlers
 from pathlib import Path
-import ipaddress
 import json
 from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
 from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
+from DeviceConfig import DeviceConfig
+from logger import log, get_logger
+from version import Version
+
+
+__version__ = Version(0, 0, 1)
 
 """
 Configuration creation tool
@@ -15,16 +18,15 @@ Configuration creation tool
 
 class ConfigTool:
     def __init__(self, uifile):
-            self.data = dict()
-            self.deviceconfig = DeviceConfig()
             self.app = QApplication(sys.argv)
             Ui, Window = uic.loadUiType(uifile)
             self.window = Window()
             self.window.setWindowIcon(QIcon(str(Path("data").joinpath("logo.png"))))
             self.ui = Ui()
             self.ui.setupUi(self.window)
-            LOGGER.addHandler(LogViewer(self.ui.PTE_log))
-            self.init_data(Path("data").joinpath("device_data.json"))
+            get_logger().set_logviewer(self.ui.PTE_log)
+            DeviceConfig.init_class(Path("data").joinpath("device_data.json"))
+            self.deviceconfig = DeviceConfig()
             self.init_ui()
             self.window.show()
             self.app.exec()
@@ -33,67 +35,77 @@ class ConfigTool:
         self.ui.L_success.hide()
         # main configuration
         self.ui.LE_device_name.editingFinished.connect(self.update_name)
-        self.ui.CB_device_type.currentIndexChanged.connect(self.update_devices)
-        self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
+        self.ui.CB_device_type.addItems(self.deviceconfig.get_device_types())
         self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
+        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.get_device_type()))
         self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
-        self.ui.CB_device_ref.activated.connect(self.update_ports)
+        self.ui.CB_device_type.currentIndexChanged.connect(self.update_device_type)
+        self.ui.CB_device_ref.currentIndexChanged.connect(self.update_device_ref)
         # port configuration
-        self.ui.RB_mode_trunk.toggled.connect(self.toggle_portconf)
-        self.ui.RB_mode_access.toggled.connect(self.toggle_portconf)
+        self.ui.RB_mode_trunk.toggled.connect(self.toggle_porttrunk)
+        self.ui.RB_mode_access.toggled.connect(self.toggle_portacces)
         self.ui.B_applyportconf.clicked.connect(self.set_ports)
         self.update_ports()
         # vlan configuration
         self.ui.B_add_vlans.clicked.connect(self.set_vlan)
         self.ui.B_delete_vlans.clicked.connect(self.del_vlan)
-        self.ui.B_create_device.clicked.connect(self.deviceconfig.save_json)
         # RIP configuration
-        self.ui.GB_rip.toggled.connect(self.test)
+        self.ui.GB_rip.toggled.connect(self.toggle_rip)
+        self.ui.B_addnet.clicked.connect(self.add_ripnet)
         # exit button
+        self.ui.B_create_device.clicked.connect(self.deviceconfig.save_all)
         self.ui.B_preview_json.clicked.connect(self.preview_config)
         self.ui.B_exit.clicked.connect(self.exit_prog)
 
-    def init_data(self, file):
-        with open(file, 'r', encoding="UTF-8") as f:
-            self.data.update(json.load(f))
-        for cle in self.data.keys():
-            for cle_2, data in self.data[cle].items():
-                ports = []
-                for port in data["ports"]:
-                    ports.extend([port["type"] + str(i) for i in range(port["nb"])])
-                data["ports"] = ports
-        log("info", 'device data loaded.',
-                    f'\n\t switches: {" - ".join(self.data["Switch"].keys())} ;',
-                    f'\n\t routeurs: {" - ".join(self.data["Router"].keys())}')
-
-    def update_devices(self):
-        self.ui.CB_device_ref.clear()
-        self.ui.CB_device_ref.addItems(self.data[self.ui.CB_device_type.currentText()])
+    def update_device_type(self):
         self.deviceconfig.set_device_type(self.ui.CB_device_type.currentText())
-        self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
-        self.update_ports()
+        self.ui.CB_device_ref.clear()
+        self.ui.CB_device_ref.addItems(self.deviceconfig.get_device_refs(self.deviceconfig.get_device_type()))
+
+    def update_device_ref(self):
+        if self.ui.CB_device_ref.currentText() != "":
+            self.deviceconfig.set_device_ref(self.ui.CB_device_ref.currentText())
+            self.update_ports()
 
     def update_ports(self):
         self.ui.LW_ports.clear()
-        self.ui.LW_ports.addItems(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
-        self.deviceconfig.init_ports(self.data[self.ui.CB_device_type.currentText()][self.ui.CB_device_ref.currentText()]["ports"])
+        self.ui.LW_ports.addItems(self.deviceconfig.get_portsname())
 
     def update_name(self):
         if self.ui.LE_device_name.text() != "":
             self.deviceconfig.set_name(self.ui.LE_device_name.text())
 
-    def toggle_portconf(self):
+    def toggle_portacces(self):
         if self.ui.RB_mode_access.isChecked():
             self.ui.access_conf_frame.setEnabled(1)
-            self.ui.trunk_conf_frame.setEnabled(0)
-        if self.ui.RB_mode_trunk.isChecked():
+            if self.ui.RB_mode_trunk.isChecked():
+                self.ui.RB_mode_trunk.toggle()
+        else:
             self.ui.access_conf_frame.setEnabled(0)
+
+    def toggle_porttrunk(self):
+        if self.ui.RB_mode_trunk.isChecked():
             self.ui.trunk_conf_frame.setEnabled(1)
+            if self.ui.RB_mode_access.isChecked():
+                self.ui.RB_mode_access.toggle()
+        else:
+            self.ui.trunk_conf_frame.setEnabled(0)
+
+    def toggle_rip(self):
+        if self.ui.GB_rip.isChecked():
+            self.deviceconfig.set_rip(1, int(self.ui.CB_ripver.currentText()), self.ui.CB_noautosum.isChecked())
+        else:
+            self.deviceconfig.set_rip(0)
+
+    def add_ripnet(self):
+        res = self.deviceconfig.add_rip_network(self.ui.LE_ripnet.text())
+        if res:
+            self.ui.LW_ripnet.addItem(res)
 
     def set_vlan(self):
         res = self.deviceconfig.set_vlan(self.ui.LE_vlannb.text(), self.ui.LE_name_vlan.text())
         if res is not None:
-            self.ui.LW_vlans.addItem(" - ".join(res))
+            self.ui.LW_vlans.addItem(" - ".join([str(i) for i in res]))
 
     def set_ports(self):
         config = {}
@@ -104,6 +116,8 @@ class ConfigTool:
             config["port_mode"] = "Trunk"
             config["allowed_vlans"] = self.ui.LE_allowedvlans.text()
             config["native_vlan"] = self.ui.LE_nativevlan.text()
+        if self.ui.LE_portipadd.text() != "":
+            config["ipadd"] = self.ui.LE_portipadd.text()
         self.deviceconfig.set_ports([item.text() for item in self.ui.LW_ports.selectedItems()], config)
 
     def exit_prog(self):
@@ -115,6 +129,7 @@ class ConfigTool:
 
     def del_vlan(self):
         for ele in self.ui.LW_vlans.selectedItems():
+            self.deviceconfig.del_vlan(int(ele.text().split(" - ")[0]))
             self.ui.LW_vlans.takeItem(self.ui.LW_vlans.row(ele))
 
     def test(self):
@@ -133,145 +148,7 @@ class JsonPreviewDialog(QDialog):
         self.setLayout(self.layout)
 
 
-class LogViewer(logging.Handler):
-    def __init__(self, widget):
-        super().__init__()
-        self.widget = widget
-        self.widget.setReadOnly(True)
-        formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
-        self.setFormatter(formatter)
 
-    def emit(self, record):
-        msg = self.format(record)
-        if record.levelname == "INFO":
-            self.widget.setTextColor(QColor(33, 184, 2))
-        elif record.levelname == "WARNING":
-            self.widget.setTextColor(QColor(208, 113, 0))
-        elif record.levelname == "ERROR":
-            self.widget.setTextColor(QColor(221, 0, 0))
-        elif record.levelname == "CRITICAL":
-            self.widget.setTextColor(QColor(255, 0, 0))
-        else:
-            self.widget.setTextColor(QColor(0, 0, 0))
-        self.widget.append(msg)
-
-"""
-Device Configuration Class
-"""
-
-
-class DeviceConfig:
-
-    def __init__(self):
-        self.name = None
-        self.data = {
-            "name": self.name,
-            "device_type": None,
-            "device_ref": None,
-            "ports": {},
-            "vlan": {}
-        }
-
-    def init_ports(self, portlist):
-        self.data["ports"] = {port: {} for port in portlist}
-
-    def set_port(self, port, port_mode=None, access_vlan=None, allowed_vlans=None, native_vlan=None):
-        if port_mode is not None and port_mode.lower() in ["access", "trunk"]:
-            if port_mode.lower() == "access":
-                if access_vlan is not None or "":
-                    try:
-                        int(access_vlan)
-                    except ValueError:
-                        log("warning", f"vlan access value is not int. access vlan for port {port} not set. ")
-                    else:
-                        self.data["ports"][port]["port_mode"] = port_mode
-                        self.data["ports"][port]["access_vlan"] = access_vlan
-            if port_mode.lower() == "trunk":
-                if allowed_vlans is not None or "":
-                    self.data["ports"][port]["port_mode"] = port_mode
-                    self.data["ports"][port]["allowed_vlans"] = allowed_vlans
-                    if native_vlan is not None or "":
-                        self.data["ports"][port]["native_vlan"] = native_vlan
-                    else:
-                        log("warning", "no native vlan set.")
-
-    def set_ports(self, portlist, portconfig):
-        for port in portlist:
-            self.set_port(port, **portconfig)
-
-    def set_device_type(self, devicetype):
-        self.data["device_type"] = devicetype
-
-    def set_device_ref(self, deviceref):
-        self.data["device_ref"] = deviceref
-
-    def set_name(self, name):
-        self.name = name
-        self.data["name"] = self.name
-
-    def set_vlan(self, number, name):
-        try:
-            number = int(number)
-        except ValueError:
-            log("error", "vlan number not integer, vlan not created")
-            return None
-        else:
-            if number in self.data["vlan"].keys():
-                log("warning","vlan number already exists. Please delete existing one before creating new one.")
-                return None
-            else:
-                self.data["vlan"][number] = {"name": name}
-                return number, name
-
-    def get_json(self):
-        return json.dumps(self.data, indent=4)
-
-    def save_json(self):
-        if self.name is not None:
-            with open(Path("data").joinpath("configs", self.name+".json"), "w", encoding="utf-8") as f:
-                json.dump(self.data, f, indent=4)
-            log("info", f"config json saved in data/configs/{self.name}.json")
-        else:
-            log("error", "config not saved, no name was set.")
-"""
-logger
-"""
-
-
-def init_logger():
-    """
-    creates logger object. The logger has 2 handlers: One handler
-    for showing logs in terminal and one handler for saving logs
-    in file.
-    """
-    logger = logging.getLogger('Network_comissioning')
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.DEBUG)
-    sh.setFormatter(formatter)
-    logger.addHandler(sh)
-    fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Network_comissioning.log"),
-                                              maxBytes=1048576, backupCount=5, encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-    return logger
-
-
-LOGGER = init_logger()
-
-
-def log(logtype, *texts):
-    text = " ".join(texts)
-    if logtype.lower() == "info":
-        LOGGER.info(text)
-    elif logtype.lower() == "warning":
-        LOGGER.warning(text)
-    elif logtype.lower() == "error":
-        LOGGER.error(text)
-    else:
-        LOGGER.warning("message type incorrect. Message: " + text)
 
 
 if __name__ == "__main__":

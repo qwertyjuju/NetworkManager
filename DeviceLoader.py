@@ -1,67 +1,7 @@
-import multiprocessing as proc
-from pathlib import Path
-import logging
-import logging.handlers
 import time
 import re
-import json
 import serial
-
-
-command_list = ["ena",
-                "conf t",
-                "hostname ju",
-                "enable secret azerty123"
-                ]
-
-
-commands = {
-    "ports configuration":{
-        "%{forloop(%ports%)}":[
-            "int %()"
-        ],
-    }
-}
-
-"""
-logger
-"""
-
-
-def init_logger():
-    """
-    creates logger object. The logger has 2 handlers: One handler
-    for showing logs in terminal and one handler for saving logs
-    in file.
-    """
-    logger = logging.getLogger('Device_configuration')
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
-    sh = logging.StreamHandler()
-    sh.setLevel(logging.DEBUG)
-    sh.setFormatter(formatter)
-    logger.addHandler(sh)
-    fh = logging.handlers.RotatingFileHandler(filename=Path("logs/Device_configuration.log"),
-                                              maxBytes=1048576, backupCount=5, encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-    return logger
-
-
-LOGGER = init_logger()
-
-
-def log(logtype: str, *texts):
-    text = " ".join(texts)
-    if logtype.lower() == "info":
-        LOGGER.info(text)
-    elif logtype.lower() == "warning":
-        LOGGER.warning(text)
-    elif logtype.lower() == "error":
-        LOGGER.error(text)
-    else:
-        LOGGER.warning("message type incorrect. Message: " + text)
+from logger import log
 
 
 class SerialDisplay:
@@ -71,73 +11,6 @@ class SerialDisplay:
 
     def add(self):
         pass
-
-"""
-ConfigParser
-"""
-
-
-class ConfigParser:
-    _categories={
-        "name": str,
-        "device_type": str,
-        "device_ref": str,
-        "ports": dict,
-        "vlan": dict,
-    }
-
-    def __init__(self, filename=None):
-        self.data = {}
-        self.commands = []
-        if filename:
-            self.file = Path(filename)
-            self.load(filename)
-            self.parse()
-            self.create_txt()
-
-    def load(self, filename):
-        if self.file.suffix in [".json"]:
-            data = {}
-            if self.file.suffix==".json":
-                data.update(self._load_json(self.file))
-            for categoryname, content in data.items():
-                # noinspection PyTypeHints
-                if categoryname in self._categories.keys() and isinstance(content, self._categories[categoryname]):
-                    self.data[categoryname] = content
-                else:
-                    log("warning", f"{categoryname} category not recognised.")
-
-    @staticmethod
-    def _load_json(file):
-        with open(file, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    def parse(self):
-        commands = [
-            "enable",
-            "configure terminal"
-        ]
-        # vlan commands creation
-        for vlannb, vlan in self.data["vlan"].items():
-            temp = f'vlan {vlannb}|name {vlan["name"]}|exit'.split("|")
-            if "ip_address" in vlan.keys():
-                temp.extend(f'interface vlan {vlannb}|ip address {vlan["ip_address"]}|exit'.split("|"))
-            commands.extend(temp)
-        # port commands creation
-        for portname, port in self.data["ports"].items():
-            try:
-                port["port_mode"]
-            except KeyError:
-                pass
-            else:
-                if port["port_mode"].lower() == "trunk":
-                    commands.extend(f'interface {portname}|switchport mode trunk|switchport trunk allowed vlan {port["allowed_vlans"]}|switchport trunk native {port["native_vlan"]}'.split("|"))
-        self.commands = commands
-        print(commands)
-
-    def create_txt(self):
-        with open(f"{self.file.stem}.txt","w", encoding="utf-8") as f:
-            f.writelines([i+"\n" for i in self.commands])
 
 """
 SerialInterface
@@ -169,11 +42,7 @@ class SerialInterface:
                 print("out", out)
             elif regex.search(last_line) is not None:
                     print("init complete")
-                    self.initialised=1
-
-
-
-
+                    self.initialised = 1
         """
         while not self.initialised:
             line=self.write_command()
