@@ -11,7 +11,7 @@ TODO
 ## ConfigurationCreationTool
 Tool for creating a switch or router configuration. The tool will create several files:
 - json: contains all the information on the device configuration
-- cmdl: binary file used for the deviceloader tool. It contains a list of CLI commands.
+- cmdl: binary file used for the deviceloader tool. It contains a list of CLI commands.  
 current_version: 0.0.1
 
 ### V0.0.1
