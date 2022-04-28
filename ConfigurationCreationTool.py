@@ -6,6 +6,10 @@ from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
 from DeviceConfig import DeviceConfig
 from logger import log, get_logger
+from version import Version
+
+
+__version__ = Version(0, 0, 1)
 
 """
 Configuration creation tool
