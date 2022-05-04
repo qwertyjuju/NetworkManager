@@ -1,8 +1,32 @@
+import sys
 import time
 import re
+from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
+from PyQt5.QtGui import QColor, QIcon
+from PyQt5 import uic
 import serial
-from logger import log
+from logger import log, get_logger
+"""
+DeviceLoaderUi
+"""
+class DeviceLoaderUi:
+    def __init__(self, uifile):
+        self.app = QApplication(sys.argv)
+        Ui, Window = uic.loadUiType(uifile)
+        self.window = Window()
+        self.ui = Ui()
+        self.ui.setupUi(self.window)
+        get_logger().set_logviewer(self.ui.TE_log)
+        self.init_ui()
+        self.window.show()
+        self.app.exec()
 
+    def init_ui(self):
+        self.ui.TE_device_output.setStyleSheet("background:black")
+
+"""
+SerialDisplay
+"""
 
 class SerialDisplay:
     def __init__(self, display):
@@ -95,8 +119,9 @@ class SerialInterface:
 
 
 if __name__ == "__main__":
-    t = SerialInterface("COM7")
-    t.loop()
+    DeviceLoaderUi("data/ui/DeviceLoader.ui")
+    #t = SerialInterface("COM7")
+    #t.loop()
 
 
 """

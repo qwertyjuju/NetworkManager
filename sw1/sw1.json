@@ -1,0 +1,196 @@
+{
+    "name": "sw1",
+    "device_type": "Switch",
+    "device_ref": "Catalyst-2960X",
+    "ports": {
+        "g1/0/0": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/1": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/2": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/3": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/4": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/5": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/6": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/7": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/8": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/9": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/10": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/11": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/12": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/13": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/14": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/15": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/16": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/17": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/18": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/19": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/20": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/21": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/22": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g1/0/23": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g0/0": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        },
+        "g0/1": {
+            "port_mode": null,
+            "access_vlan": null,
+            "allowed_vlans": null,
+            "native_vlan": null,
+            "ip_address": null
+        }
+    },
+    "vlan": {
+        "1": {
+            "name": "production",
+            "ip_address": null
+        }
+    },
+    "rip": {}
+}
