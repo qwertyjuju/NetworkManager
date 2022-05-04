@@ -1,6 +1,5 @@
 import sys
 from pathlib import Path
-import json
 from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
 from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
@@ -146,9 +145,6 @@ class JsonPreviewDialog(QDialog):
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.jsondisplay)
         self.setLayout(self.layout)
-
-
-
 
 
 if __name__ == "__main__":

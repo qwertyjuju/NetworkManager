@@ -182,3 +182,36 @@
 2022-04-28 23:41:27,368 | logs | INFO | device data loaded. 
 	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
 	 routeurs: Cisco-1941 Series
+2022-05-02 10:40:30,618 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-02 10:41:46,470 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 08:45:05,675 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 08:45:12,683 | logs | ERROR | config not saved, no name was set.
+2022-05-03 08:45:19,596 | logs | INFO | config json saved in sw1\sw1.json
+2022-05-03 08:45:19,647 | logs | INFO | command lines file saved in sw1\sw1.cmdl
+2022-05-03 08:52:03,808 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 08:52:50,406 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 08:53:25,701 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 08:53:44,020 | logs | INFO | config json saved in sw1\sw1.json
+2022-05-03 08:53:44,022 | logs | INFO | command lines file saved in sw1\sw1.cmdl
+2022-05-03 16:24:29,916 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 16:25:35,633 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-03 16:26:22,729 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-05-03 16:26:27,833 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
+2022-05-03 16:26:36,083 | logs | INFO | config json saved in bite\bite.json
+2022-05-03 16:26:36,122 | logs | INFO | command lines file saved in bite\bite.cmdl
