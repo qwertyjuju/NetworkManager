@@ -215,3 +215,9 @@
 2022-05-03 16:26:27,833 | logs | WARNING | vlan number already exists. Please delete existing one before creating new one.
 2022-05-03 16:26:36,083 | logs | INFO | config json saved in bite\bite.json
 2022-05-03 16:26:36,122 | logs | INFO | command lines file saved in bite\bite.cmdl
+2022-05-04 19:55:18,069 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
+2022-05-04 20:11:09,154 | logs | INFO | device data loaded. 
+	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
+	 routeurs: Cisco-1941 Series
