@@ -8,28 +8,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 from PyQt5 import uic
 from logger import log, init_logger
 import openpyxl
-"""
-TODO
-UI part
-"""
 
-
-class CreationTool:
-    def __init__(self, uifile):
-        self.app = QApplication(sys.argv)
-        Ui, Window = uic.loadUiType(uifile)
-        self.window = Window()
-        self.ui = Ui()
-        self.ui.setupUi(self.window)
-        self.init_ui()
-        self.window.show()
-        self.app.exec_()
-
-    def init_ui(self):
-        self.ui.B_CreateNetwork.clicked.connect(self.create_network)
-
-    def create_network (self):
-        Network(self.ui.LE_Ipaddr.text())
 
 """
 Project
@@ -73,6 +52,14 @@ class Project:
             directory.mkdir()
         self.save_json(directory)
         self.save_excel(directory)
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
 
 """
 TODO
