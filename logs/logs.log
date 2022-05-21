@@ -224,3 +224,45 @@
 2022-05-04 20:27:42,049 | logs | ERROR | config not saved, no name was set.
 	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
 	 routeurs: Cisco-1941 Series
+2022-05-21 17:44:31,207 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 17:44:31,207 | logs | INFO | network created, ip address: 172.16.64.0/19
+2022-05-21 17:44:31,208 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 17:44:31,208 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 17:44:55,030 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 17:44:55,030 | logs | INFO | network created, ip address: 172.16.96.0/19
+2022-05-21 17:44:55,030 | logs | ERROR | network not created, 172.16.96.0/19 overlaps other network 172.16.104.0/23
+2022-05-21 17:44:55,031 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 17:44:55,032 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 17:45:34,236 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 17:45:34,237 | logs | INFO | network created, ip address: 172.16.96.0/19
+2022-05-21 17:45:34,237 | logs | ERROR | network not created, 172.16.96.0/19 overlaps other network 172.16.104.0/23
+2022-05-21 17:45:34,238 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 17:45:34,239 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 18:27:59,224 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:27:59,225 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:27:59,225 | logs | ERROR | network not created, 172.16.104.0/23 overlaps other network 172.16.104.0/23
+2022-05-21 18:27:59,226 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 18:27:59,226 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 18:31:59,243 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:33:13,972 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:33:33,941 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:34:59,972 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:34:59,972 | logs | ERROR | network not created, 172.16.104.0/23 overlaps other network 172.16.104.0/23
+2022-05-21 18:34:59,973 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 18:34:59,974 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 18:36:17,683 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:36:17,683 | logs | ERROR | network not created, 172.16.104.0/23 overlaps other network 172.16.104.0/23
+2022-05-21 18:36:17,684 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 18:36:17,686 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 18:37:05,031 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:37:05,031 | logs | ERROR | network not created, 172.16.104.0/23 overlaps already created network 172.16.104.0/23
+2022-05-21 18:37:05,032 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 18:37:05,032 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 18:37:40,866 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 18:37:40,866 | logs | ERROR | network not created, 172.16.104.0/23 overlaps already created network 172.16.104.0/23
+2022-05-21 18:37:40,867 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 18:37:40,868 | logs | INFO | network created, ip address: 172.16.96.0/21
+2022-05-21 19:02:37,252 | logs | INFO | network created, ip address: 172.16.104.0/23
+2022-05-21 19:02:37,253 | logs | ERROR | network not created, 172.16.104.0/23 overlaps already created network 172.16.104.0/23
+2022-05-21 19:02:37,253 | logs | INFO | network created, ip address: 172.16.0.0/18
+2022-05-21 19:02:37,254 | logs | INFO | network created, ip address: 172.16.96.0/21
