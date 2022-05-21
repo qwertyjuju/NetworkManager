@@ -20,21 +20,25 @@ class DeviceConfig:
         "name": {
             "type": str,
             "mandatory": 1,
+            "setter": "set_name",
             "default": None
         },
         "device_type": {
             "type": str,
             "mandatory": 1,
+            "setter": "set_device_type",
             "default": None
         },
         "device_ref": {
             "type": str,
             "mandatory": 1,
+            "setter": "set_device_ref",
             "default": None
         },
         "ports": {
             "type": dict,
             "mandatory": 0,
+            "setter": "set_ports",
             "default": {}
         },
         "vlan": {
@@ -86,13 +90,24 @@ class DeviceConfig:
             if file.suffix == ".json":
                 with open(file, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                self._data = self.check_data(data)
+                self._data = self.check_json(data)
 
-    def check_data(self, tempdata):
+    def check_json(self, tempdata):
         data = {}
         for categoryname, category in self._categories.items():
             if categoryname in tempdata.keys() and isinstance(category, self._categories[categoryname]["type"]):
-                data[categoryname] = tempdata[categoryname]
+                try:
+                    params = tempdata[categoryname]
+                    if type(params) is dict:
+                        getattr(self, category["setter"])(**params)
+                    if type(params) is list:
+                        getattr(self, category["setter"])(*params)
+                    else:
+                        getattr(self, category["setter"])(params)
+                except KeyError:
+                    pass
+                except AttributeError:
+                    log("error", f"{category['setter']} setter function not found")
             else:
                 if category["mandatory"]:
                     raise DataError

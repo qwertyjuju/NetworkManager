@@ -222,6 +222,5 @@
 	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
 	 routeurs: Cisco-1941 Series
 2022-05-04 20:27:42,049 | logs | ERROR | config not saved, no name was set.
-2022-05-04 20:34:39,468 | logs | INFO | device data loaded. 
 	 switches: Catalyst-2960X - Catalyst-2960 - Catalyst-3500-XL ; 
 	 routeurs: Cisco-1941 Series
