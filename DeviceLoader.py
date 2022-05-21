@@ -1,7 +1,7 @@
 import sys
 import time
 import re
-from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit, QVBoxLayout
 from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
 import serial
@@ -24,6 +24,9 @@ class DeviceLoaderUi:
     def init_ui(self):
         self.ui.TE_device_output.setStyleSheet("background:black")
 
+    def load(self):
+        pass
+
 """
 SerialDisplay
 """
@@ -35,6 +38,12 @@ class SerialDisplay:
 
     def add(self):
         pass
+
+
+
+"""
+DeviceLoader
+"""
 
 """
 SerialInterface
