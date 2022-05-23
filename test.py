@@ -1,3 +1,18 @@
+from NetworkCreator import Project
+
+project = Project("SAE21")
+lan1 = project.create_network("172.16.104.0/23")
+lan2 = project.create_network("172.16.64.0/19")
+lan3 = project.create_network("172.16.0.0/18")
+lan4 = project.create_network("172.16.96.0/21")
+lan1.create_vlans(((2, "admin", 10), (31, "service", 20), (90, "for_A", 30), (80, "for_B", 40), (20, "enseignants", 100)))
+lan2.create_vlans(((8, "admin", 10), (20, "service", 20), (300, "for_A", 30), (300, "for_B", 40), (40, "enseignants", 100)))
+lan3.create_vlans(((8, "admin", 10), (64, "service", 20), (512, "for_A", 30), (514, "for_B", 40), (127, "enseignants", 100)))
+lan4.create_vlans(((20, "admin", 10), (32, "service", 20), (255, "for_A", 30), (512, "for_B", 40), (40, "enseignants", 100)))
+project.save_all()
+
+
+
 """
 import re
 
@@ -29,7 +44,7 @@ for text in test:
     print(re.findall(res,text))
     print("############################")
 """
-
+"""
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import sys
@@ -84,3 +99,5 @@ for i in range(nb_carres):
 fichier = "suite_carre.png"
 pg.image.save(surface, fichier)
 print(fichier)
+
+"""
