@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit,QVBoxLayout
 from PyQt5.QtGui import QColor, QIcon
 from PyQt5 import uic
 from DeviceConfig import DeviceConfig
-from logger import log, get_logger
+from logger import log, get_logger, init_logger
 from version import Version
 
 
@@ -148,4 +148,5 @@ class JsonPreviewDialog(QDialog):
 
 
 if __name__ == "__main__":
+    init_logger("ConfigCreationTool")
     ct = ConfigTool("data/ui/commissioning_tool.ui")

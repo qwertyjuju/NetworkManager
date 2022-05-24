@@ -1,34 +1,12 @@
 import json
 import sys
-import logging
-import logging.handlers
+import math
 import ipaddress
 from pathlib import Path
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
-from PyQt5 import uic
-from logger import log
-"""
-TODO
-UI part
-"""
+from logger import log, init_logger
+import openpyxl as xl
+from openpyxl.chart import BarChart, Reference
 
-
-class CreationTool:
-    def __init__(self, uifile):
-        self.app = QApplication(sys.argv)
-        Ui, Window = uic.loadUiType(uifile)
-        self.window = Window()
-        self.ui = Ui()
-        self.ui.setupUi(self.window)
-        self.init_ui()
-        self.window.show()
-        self.app.exec_()
-
-    def init_ui(self):
-        self.ui.B_CreateNetwork.clicked.connect(self.create_network)
-
-    def create_network (self):
-        Network(self.ui.LE_Ipaddr.text())
 
 """
 Project
@@ -40,29 +18,86 @@ class Project:
         self.ip_supernet = ipaddress.IPv4Interface(supernet).network if supernet is not None else None
 
     def create_network(self, ipadd, name=None):
-        network = Network(ipadd, name)
+        ipadd = ipaddress.IPv4Interface(ipadd).network
         for net in self.networks.values():
-            if network.overlaps(net):
-                log("error", f"network not created, {str(network.ip)} overlaps other network {str(net.ip)}")
+            if net.overlaps(ipadd):
+                log("error", f"network not created, {str(ipadd)} overlaps already created network {str(net.ip)}")
                 return None
+        network = Network(ipadd, name)
         self.networks[network.name] = network
         return network
 
-    def create_json(self):
-        json_info = {netname: network.get_info() for netname, network in self.networks.items()}
-        with open(f"{self.name}.json","w") as f:
-            json.dump(json_info, f, indent=4)
+    def get_info(self):
+        return {netname: network.get_info() for netname, network in self.networks.items()}
+
+    def save_json(self, directory= None):
+        if not directory:
+            path = Path(f"{self.name}.json")
+        else:
+            path = Path(directory).joinpath(f"{self.name}.json")
+        with open(path,"w") as f:
+            json.dump(self.get_info(), f, indent=4)
+
+    def save_excel(self, directory=None):
+        if not directory:
+            path = Path(f"{self.name}.xlsx")
+        else:
+            path = Path(directory).joinpath(f"{self.name}.xlsx")
+        data = self.get_info()
+        wb = xl.Workbook()
+        mainws = wb.active
+        mainws.title = "Networks"
+        mainws.append(Network.xl_categories)
+        for networkname, networkinfo in data.items():
+            mainws.append([value for key, value in networkinfo.items() if key in Network.xl_categories])
+            netws = wb.create_sheet(networkname)
+            netws.append([networkname])
+            netws.append(["Vlans"])
+            netws.append(Vlan.xl_categories)
+            total_nb_hosts = 0
+            if networkinfo["Vlans"]:
+                for vlanname, vlaninfo in networkinfo["Vlans"].items():
+                    total_nb_hosts += vlaninfo["Number of hosts"]
+                    netws.append([value for key, value in vlaninfo.items() if key in Vlan.xl_categories])
+                values = Reference(netws, min_col=4, min_row=4, max_col=4, max_row=3+len(networkinfo["Vlans"]))
+                names = Reference(netws, min_col=1, min_row=4, max_col=1, max_row=3+len(networkinfo["Vlans"]))
+                chart = BarChart()
+                chart.add_data(values)
+                chart.set_categories(names)
+                netws.add_chart(chart, "I1")
+        values = Reference(mainws, min_col=3, min_row=2, max_col=3, max_row=1 + len(data))
+        names = Reference(mainws, min_col=1, min_row=2, max_col=1, max_row=1 + len(data))
+        chart = BarChart()
+        chart.add_data(values)
+        chart.set_categories(names)
+        mainws.add_chart(chart, "I1")
+        try:
+            wb.save(path)
+        except PermissionError:
+            log("error", "excel file not saved, please close file")
+
+    def save_all(self):
+        directory = Path(f"{self.name}")
+        if not directory.exists():
+            directory.mkdir()
+        self.save_json(directory)
+        self.save_excel(directory)
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
 """
 TODO
 Network creation tool
 """
+class AbstractNetwork:
 
-
-class Network:
-    """
-    Base class for a network
-    """
-    _counter = 1
+    _cidr = None
 
     def __new__(cls, *args, **kwargs):
         try:
@@ -73,6 +108,50 @@ class Network:
         else:
             return super().__new__(cls)
 
+    def __init__(self, ipadd):
+        self.ip = ipaddress.IPv4Interface(ipadd).network
+        self._name = None
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+    @classmethod
+    def __init_class__(cls):
+        cls._create_cidr_dict()
+
+    @classmethod
+    def _create_cidr_dict(cls):
+        cls._cidr = {
+            1: 2147483646,
+            30: 2,
+        }
+        for i in range(2, 30):
+            cls._cidr[i] = math.floor((cls._cidr[1] * ((1 / 2) ** (i - 1))) - 1)
+
+    def overlaps(self, network):
+        if isinstance(network, (Network, Vlan)):
+            return self.ip.overlaps(network.ip)
+        else:
+            return self.ip.overlaps(network)
+
+
+
+
+AbstractNetwork.__init_class__()
+
+
+class Network(AbstractNetwork):
+    xl_categories = ["Name", "IP", "Number of hosts", "Broadcast", "Range"]
+    """
+    Base class for a network
+    """
+    _counter = 1
+
     def __init__(self, ipadd, name=None):
         """
         Creates new network. if no name is passed as parameter, the network
@@ -80,30 +159,57 @@ class Network:
         :param ipadd:
         :param name:
         """
-        self.ip = ipaddress.IPv4Interface(ipadd).network
+        super().__init__(ipadd)
         self.name = name if name is not None else "LAN"+str(Network._counter)
         self.subnets = {}
         self.devices = {}
         self.vlans = {}
-        self.nb_vlan = 0
+        self.nb_vlan = 1
         Network._counter += 1
-        log("info", f"network created, ip address: {str(self.ip)}")
+        log("info", f"network created, ip address: {str(self.ip)}, name: {self.name}")
 
     def create_subnet(self, ipadd):
-        """
-        Create subnet with ipadd and returns the subnet created if the
-        ipadd parameter is valid
-        :param ipadd:
-        :return:
-        """
-        if ipadd not in self.subnets.keys:
-            subnet = Network(ipadd)
-            if subnet is not None:
-                self.subnets[ipadd] = subnet
-                return subnet
-
-    def create_vlan(self, nb_devices):
         pass
+
+    def create_vlans(self, vlan_param_list):
+        vlan_param_list = sorted(vlan_param_list,key = lambda x: x[0] if isinstance(x,(list,tuple)) else x, reverse=True)
+        for params in vlan_param_list:
+            if isinstance(params, (list, tuple)):
+                self.create_vlan(*params)
+            else:
+                self.create_vlan(params)
+
+    def create_vlan(self, nb_devices, name=None, number = None):
+        cidr = None
+        if nb_devices < 2:
+            cidr = 30
+        else:
+            for i in range(30, 0, -1):
+                if nb_devices < self._cidr[i]:
+                    cidr = i
+                    break
+        if cidr:
+            net = self.find_suitable_net(list(self.ip.subnets(new_prefix=cidr)))
+            if net:
+                vlan = Vlan(net, self, name, number)
+                self.vlans[vlan.name] = vlan
+            else:
+                log("warning", f"can't create vlan with cidr:/{cidr}, not enough space on network")
+
+    def find_suitable_net(self, netl):
+        subnets = [vlan for vlan in self.vlans.values()]
+        subnets.extend([subnet for subnet in self.subnets.values()])
+        for i in netl:
+            if subnets:
+                for j in subnets:
+                    if j.overlaps(i):
+                        break
+                else:
+                    return i
+            else:
+                return i
+        else:
+            return None
 
     def get_info(self):
         """
@@ -112,13 +218,13 @@ class Network:
         """
         info = {
             "Name": self.name,
-            "Ip": str(self.ip),
+            "IP": str(self.ip),
             "Subnetworks": {},
             "Devices": {},
             "Vlans": {},
             "Number of hosts": self.ip.num_addresses,
             "Broadcast": str(self.ip.broadcast_address),
-            "range": f"{str(list(self.ip.hosts())[0])} - {str(list(self.ip.hosts())[-1])}"
+            "Range": f"{str(list(self.ip.hosts())[0])} - {str(list(self.ip.hosts())[-1])}"
         }
         for subip, subnet in self.subnets.items():
             info["Subnetworks"][subip] = subnet.get_info()
@@ -128,46 +234,33 @@ class Network:
             info["Vlans"][vlanname] = vlan.get_info()
         return info
 
-    def create_excel(self):
-        pass
+class Vlan (AbstractNetwork):
+    xl_categories = ["Name", "number", "IP", "Number of hosts", "Broadcast", "Range"]
 
-    def create_json(self):
-        """
-        calls the get_info method of the network and creates a json with
-        all the network information
-        :return:
-        """
-        json_info = self.get_info()
-        with open(self.name+".json", "w") as f:
-            json.dump(json_info, f)
-
-    def overlaps(self, network):
-        return self.ip.overlaps(network.ip)
-
-
-class Vlan:
-
-    def __new__(cls, *args, **kwargs):
-        if isinstance(args[0], Network):
-            try:
-                ipaddress.ip_network(args[1])
-            except ValueError:
-                log("error", "Vlan creation: not ip network format. vlan not created")
-                return None
-            else:
-                return super().__new__(cls)
-        else:
-            log("error", "Vlan creation: No Network given as first argument. Vlan not created")
-            return None
-
-    def __init__(self, network: Network, ipadd: str, name=None):
+    def __init__(self, ipadd, network: Network, name=None, number=None):
+        super().__init__(ipadd)
         self.network = network
         self.name = name if name is not None else "VLAN"+str(self.network.nb_vlan)
-        self.ip = ipaddress.IPv4Interface(ipadd).network
+        if number is not None:
+            try:
+                self.number = int(number)
+            except ValueError:
+                log("warning", f"wrong vlan number. Default number used: {self.network.nb_vlan}")
+                self.number = self.network.nb_vlan
+        else:
+            self.number = self.network.nb_vlan
         self.network.nb_vlan += 1
+        log("info", f"vlan created, vlan number: {str(self.number)}, ip address: {str(self.ip)}, name: {self.name}")
 
     def get_info(self):
-        info = {}
+        info = {
+            "Name": self.name,
+            "number": self.number,
+            "IP": str(self.ip),
+            "Number of hosts": self.ip.num_addresses,
+            "Broadcast": str(self.ip.broadcast_address),
+            "Range": f"{str(list(self.ip.hosts())[0])} - {str(list(self.ip.hosts())[-1])}"
+        }
         return info
 
 
@@ -207,12 +300,8 @@ class Switch(NetworkDevice):
         pass
 
 
-if __name__ == "__main__":
-    project = Project("SAE21")
-    lan1 = project.create_network("172.16.104.0/23")
-    lan2 = project.create_network("172.16.64.0/19")
-    lan3 = project.create_network("172.16.0.0/18")
-    lan4 = project.create_network("172.16.96.0/21")
+init_logger("NetworkCreator")
+
+
     #lan5 = project.create_network("172.16.96.2/21")
-    project.create_json()
-    #CreationTool(Path("data/ui/creation_tool.ui"))
+

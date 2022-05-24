@@ -3,7 +3,6 @@ import logging.handlers
 from PyQt5.QtGui import QColor
 from pathlib import Path
 
-
 class Logger:
     logger = None
 
@@ -72,8 +71,11 @@ def get_logger():
     return Logger.logger
 
 
-if Logger.logger is None:
-    Logger()
-log = Logger.logger.log
+def log(logtype, *texts):
+    Logger.logger.log(logtype, *texts)
 
+
+def init_logger(name="logs"):
+    if Logger.logger is None:
+        Logger(name)
 

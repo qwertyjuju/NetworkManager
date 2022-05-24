@@ -1,0 +1,206 @@
+{
+    "LAN1": {
+        "Name": "LAN1",
+        "IP": "172.16.104.0/23",
+        "Subnetworks": {},
+        "Devices": {},
+        "Vlans": {
+            "for_A": {
+                "Name": "for_A",
+                "number": 30,
+                "IP": "172.16.104.0/25",
+                "Number of hosts": 128,
+                "Broadcast": "172.16.104.127",
+                "Range": "172.16.104.1 - 172.16.104.126"
+            },
+            "for_B": {
+                "Name": "for_B",
+                "number": 40,
+                "IP": "172.16.104.128/25",
+                "Number of hosts": 128,
+                "Broadcast": "172.16.104.255",
+                "Range": "172.16.104.129 - 172.16.104.254"
+            },
+            "service": {
+                "Name": "service",
+                "number": 20,
+                "IP": "172.16.105.0/26",
+                "Number of hosts": 64,
+                "Broadcast": "172.16.105.63",
+                "Range": "172.16.105.1 - 172.16.105.62"
+            },
+            "enseignants": {
+                "Name": "enseignants",
+                "number": 100,
+                "IP": "172.16.105.64/27",
+                "Number of hosts": 32,
+                "Broadcast": "172.16.105.95",
+                "Range": "172.16.105.65 - 172.16.105.94"
+            },
+            "admin": {
+                "Name": "admin",
+                "number": 10,
+                "IP": "172.16.105.96/29",
+                "Number of hosts": 8,
+                "Broadcast": "172.16.105.103",
+                "Range": "172.16.105.97 - 172.16.105.102"
+            }
+        },
+        "Number of hosts": 512,
+        "Broadcast": "172.16.105.255",
+        "Range": "172.16.104.1 - 172.16.105.254"
+    },
+    "LAN2": {
+        "Name": "LAN2",
+        "IP": "172.16.64.0/19",
+        "Subnetworks": {},
+        "Devices": {},
+        "Vlans": {
+            "for_A": {
+                "Name": "for_A",
+                "number": 30,
+                "IP": "172.16.64.0/23",
+                "Number of hosts": 512,
+                "Broadcast": "172.16.65.255",
+                "Range": "172.16.64.1 - 172.16.65.254"
+            },
+            "for_B": {
+                "Name": "for_B",
+                "number": 40,
+                "IP": "172.16.66.0/23",
+                "Number of hosts": 512,
+                "Broadcast": "172.16.67.255",
+                "Range": "172.16.66.1 - 172.16.67.254"
+            },
+            "enseignants": {
+                "Name": "enseignants",
+                "number": 100,
+                "IP": "172.16.68.0/26",
+                "Number of hosts": 64,
+                "Broadcast": "172.16.68.63",
+                "Range": "172.16.68.1 - 172.16.68.62"
+            },
+            "service": {
+                "Name": "service",
+                "number": 20,
+                "IP": "172.16.68.64/27",
+                "Number of hosts": 32,
+                "Broadcast": "172.16.68.95",
+                "Range": "172.16.68.65 - 172.16.68.94"
+            },
+            "admin": {
+                "Name": "admin",
+                "number": 10,
+                "IP": "172.16.68.96/28",
+                "Number of hosts": 16,
+                "Broadcast": "172.16.68.111",
+                "Range": "172.16.68.97 - 172.16.68.110"
+            }
+        },
+        "Number of hosts": 8192,
+        "Broadcast": "172.16.95.255",
+        "Range": "172.16.64.1 - 172.16.95.254"
+    },
+    "LAN3": {
+        "Name": "LAN3",
+        "IP": "172.16.0.0/18",
+        "Subnetworks": {},
+        "Devices": {},
+        "Vlans": {
+            "for_B": {
+                "Name": "for_B",
+                "number": 40,
+                "IP": "172.16.0.0/22",
+                "Number of hosts": 1024,
+                "Broadcast": "172.16.3.255",
+                "Range": "172.16.0.1 - 172.16.3.254"
+            },
+            "for_A": {
+                "Name": "for_A",
+                "number": 30,
+                "IP": "172.16.4.0/22",
+                "Number of hosts": 1024,
+                "Broadcast": "172.16.7.255",
+                "Range": "172.16.4.1 - 172.16.7.254"
+            },
+            "enseignants": {
+                "Name": "enseignants",
+                "number": 100,
+                "IP": "172.16.8.0/24",
+                "Number of hosts": 256,
+                "Broadcast": "172.16.8.255",
+                "Range": "172.16.8.1 - 172.16.8.254"
+            },
+            "service": {
+                "Name": "service",
+                "number": 20,
+                "IP": "172.16.9.0/25",
+                "Number of hosts": 128,
+                "Broadcast": "172.16.9.127",
+                "Range": "172.16.9.1 - 172.16.9.126"
+            },
+            "admin": {
+                "Name": "admin",
+                "number": 10,
+                "IP": "172.16.9.128/28",
+                "Number of hosts": 16,
+                "Broadcast": "172.16.9.143",
+                "Range": "172.16.9.129 - 172.16.9.142"
+            }
+        },
+        "Number of hosts": 16384,
+        "Broadcast": "172.16.63.255",
+        "Range": "172.16.0.1 - 172.16.63.254"
+    },
+    "LAN4": {
+        "Name": "LAN4",
+        "IP": "172.16.96.0/21",
+        "Subnetworks": {},
+        "Devices": {},
+        "Vlans": {
+            "for_B": {
+                "Name": "for_B",
+                "number": 40,
+                "IP": "172.16.96.0/22",
+                "Number of hosts": 1024,
+                "Broadcast": "172.16.99.255",
+                "Range": "172.16.96.1 - 172.16.99.254"
+            },
+            "for_A": {
+                "Name": "for_A",
+                "number": 30,
+                "IP": "172.16.100.0/23",
+                "Number of hosts": 512,
+                "Broadcast": "172.16.101.255",
+                "Range": "172.16.100.1 - 172.16.101.254"
+            },
+            "enseignants": {
+                "Name": "enseignants",
+                "number": 100,
+                "IP": "172.16.102.0/26",
+                "Number of hosts": 64,
+                "Broadcast": "172.16.102.63",
+                "Range": "172.16.102.1 - 172.16.102.62"
+            },
+            "service": {
+                "Name": "service",
+                "number": 20,
+                "IP": "172.16.102.64/26",
+                "Number of hosts": 64,
+                "Broadcast": "172.16.102.127",
+                "Range": "172.16.102.65 - 172.16.102.126"
+            },
+            "admin": {
+                "Name": "admin",
+                "number": 10,
+                "IP": "172.16.102.128/27",
+                "Number of hosts": 32,
+                "Broadcast": "172.16.102.159",
+                "Range": "172.16.102.129 - 172.16.102.158"
+            }
+        },
+        "Number of hosts": 2048,
+        "Broadcast": "172.16.103.255",
+        "Range": "172.16.96.1 - 172.16.103.254"
+    }
+}
